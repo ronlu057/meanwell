@@ -1167,7 +1167,7 @@ button {
 }
 
 .memberUserBoxLeft {
-  width: 100%;
+  width: auto;
   height: 46px;
   float: left;
 }
@@ -1175,4 +1175,66 @@ button {
   width: auto;
   height: 100%;
   float: left;
+}
+
+.memberUserName {
+  width: auto;
+  height: 46px;
+  float: left;
+  margin-left: 10px;
+  color: #006699;
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-content: flex-end;
+  align-items: flex-end;
+}
+
+.qrcodeph {
+  width: 46px;
+  height: 46px;
+  float: left;
+}
+.qrcodeph img {
+  width: 100%;
+  height: auto;
+  float: left;
+  max-width: 100%;
+}
+
+.MembershipLevelBox {
+  width: 180px;
+  height: 46px;
+  float: left;
+  display: inline-flex;
+  justify-content: flex-end;
+  align-content: space-between;
+  align-items: space-between;
+  flex-wrap: wrap;
+  margin-right: 10px;
+}
+
+.memberleve {
+  width: 80;
+  height: 22px;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  color: #555555;
+  background: rgb(230, 230, 230);
+  background: linear-gradient(to bottom, rgb(230, 230, 230) 0%, rgb(212, 212, 212) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#e6e6e6", endColorstr="#d4d4d4",GradientType=0 );
+  line-height: 22px;
+  border-radius: 3px;
+  padding: 0 10px;
+}
+
+.memberqrtext {
+  width: auto;
+  height: auto;
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: #006699;
 }/*# sourceMappingURL=tw_main.css.map */

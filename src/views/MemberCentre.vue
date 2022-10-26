@@ -41,8 +41,15 @@
                     <div class="memberCenterRightTopBox">
                         <div class="memberUserBox">
                             <div class="memberUserBoxLeft"><img src="../img/memberUserIcon.svg" alt=""></div>
+                            <div class="memberUserName">王小明  您好!</div>
                         </div>
-                        <div class="memberUserQRcord"></div>
+                        <div class="memberUserQRcord">
+                            <div class="MembershipLevelBox">
+                                <div class="memberleve">銀卡會員</div>
+                                <div class="memberqrtext">我的會員QRCORD</div>
+                            </div>
+                            <div class="qrcodeph"><img src="../img/qr-code-line.svg" alt=""></div>
+                        </div>
                     </div>
                     <div class="memberCenterRightContentBox"></div>
                 </div>
