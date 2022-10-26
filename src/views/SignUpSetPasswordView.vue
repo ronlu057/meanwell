@@ -5,7 +5,7 @@
                 <div class="loginBigIcon"><img src="../img/LoginBigIcon.svg" alt=""></div>
             </section>
             <section class="loginContentBox">
-                <div class="ContentBoxTitle">會員註冊-帳號密碼</div>
+                <div class="ContentBoxTitle">會員註冊</div>
                 <div class="PageTitle">設定密碼</div>
                 <input type="password" name="singupPW" id="" placeholder="請輸入設定密碼" class="Inputset100">
                 <div class="PageTitle">確認設定密碼</div>

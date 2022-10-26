@@ -5,7 +5,7 @@
                 <div class="loginBigIcon"><img src="../img/LoginBigIcon.svg" alt=""></div>
             </section>
             <section class="loginContentBox">
-                <div class="ContentBoxTitle">會員註冊-帳號設定</div>
+                <div class="ContentBoxTitle">會員註冊</div>
                 <div class="signup_User_account">
                     <input type="email" class="signup_User_accountInput" placeholder="請輸入電子信箱" required>
                 </div>

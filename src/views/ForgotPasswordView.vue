@@ -5,7 +5,7 @@
                 <div class="loginBigIcon"><img src="../img/LoginBigIcon.svg" alt=""></div>
             </section>
             <section class="loginContentBox">
-                <div class="ContentBoxTitle">會員登入-忘記密碼</div>
+                <div class="ContentBoxTitle">忘記密碼</div>
                 <div class="signup_User_account">
                     <input type="text" class="signup_User_accountInput" placeholder="請輸入6-20英數字元" required>
                 </div>
