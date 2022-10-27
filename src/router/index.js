@@ -5,6 +5,7 @@ import ForgotPassword from '../views/ForgotPasswordView.vue'
 import SignUp from '../views/SignUpView.vue'
 import SignUpSetPassword from '../views/SignUpSetPasswordView.vue'
 import MemberCentre from '../views/MemberCentre.vue'
+import PersonalInformation from '../views/PersonalInformation.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -46,6 +47,12 @@ const router = createRouter({
       path: '/MemberCentre',
       name: 'MemberCentre',
       component: MemberCentre
+    }
+    ,
+    {
+      path: '/PersonalInformation',
+      name: 'PersonalInformation',
+      component: PersonalInformation
     }
   ]
 })

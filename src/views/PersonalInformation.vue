@@ -5,7 +5,9 @@
                 <ul>
                     <li>首頁</li>
                     <li>></li>
-                    <li>會員中心</li>
+                    <li>帳號管理</li>
+                    <li>></li>
+                    <li>個人資料</li>
                 </ul>
             </div>
             <section class="MemberCentreContent">
@@ -17,7 +19,7 @@
                         </div></router-link>
                         <div class="navItemSort">
                             <div class="navItemSortContent">
-                                <div class="navItemSortContentItem" :class="{ active: activeIddx === iddx }" v-for="(itax, iddx) in items.item" :key="itax.name" @click="handleMenuFna(iddx)"><router-link :to="items.path">{{ itax.name }}</router-link></div>
+                                <div class="navItemSortContentItem" :class="{ active: activeIddx === iddx }" v-for="(itax, iddx) in items.item" :key="itax.name" @click="handleMenuFna(iddx)"><router-link :to="itax.path">{{ itax.name }}</router-link></div>
                             </div>
                         </div>
                     </div>
@@ -39,44 +41,9 @@
                     <div class="memberCenterRightContentBox">
                         <div class="itemTitle">
                             <div class="itemTitleLine"></div>
-                            <div class="itemTitletext">SDG帳戶</div>
+                            <div class="itemTitletext">姓名</div>
                         </div>
-                        <div class="pointsBox">
-                            <div class="pointsBoxItem">
-                                <div class="pointsBoxItemLeft">SDG 點數</div>
-                                <div class="pointsBoxItemRight">12,000 P</div>
-                            </div>
-                            <div class="pointsBoxItem">
-                                <div class="pointsBoxItemLeft">志工時數</div>
-                                <div class="pointsBoxItemRight">12 H</div>
-                            </div>
-                            <div class="pointsBoxItem">
-                                <div class="pointsBoxItemLeft">課程時數</div>
-                                <div class="pointsBoxItemRight">25 H</div>
-                            </div>
-                        </div>
-                        <div class="itemTitle">
-                            <div class="itemTitleLine"></div>
-                            <div class="itemTitletext">SDG禮贈品專區</div>
-                        </div>
-                        <div class="giftsBox">
-                            <div class="giftsBoxItem">
-                                <div class="giftsBoxItemIcon"><img src="../img/MemberCenter-Gifts.svg" alt=""></div>
-                                <div class="giftsBoxItemtext">禮贈兌換</div>
-                            </div>
-                            <div class="giftsBoxItem">
-                                <div class="giftsBoxItemIcon"><img src="../img/MemberCenter-Points.svg" alt=""></div>
-                                <div class="giftsBoxItemtext">點數專區</div>
-                            </div>
-                            <div class="giftsBoxItem">
-                                <div class="giftsBoxItemIcon"><img src="../img/MemberCenter-Order.svg" alt=""></div>
-                                <div class="giftsBoxItemtext">訂單查詢</div>
-                            </div>
-                            <div class="giftsBoxItem">
-                                <div class="giftsBoxItemIcon"><img src="../img/MemberCenter-Digital.svg" alt=""></div>
-                                <div class="giftsBoxItemtext">數位票券</div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </section>
@@ -85,8 +52,8 @@
 </template>
 <script setup>
     import { ref } from "vue"
-    const activeIdx = ref(0);
-    const activeIddx = ref(null);
+    const activeIdx = ref(1);
+    const activeIddx = ref(0);
     const NavItemArr = ref([
         {
             name: 'SDG帳戶',
