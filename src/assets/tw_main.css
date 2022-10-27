@@ -1065,7 +1065,7 @@ button {
 
 .memberNavItem {
   width: 100%;
-  height: 55px;
+  height: auto;
   float: left;
   background-color: transparent;
   padding: 0px 30px;
@@ -1073,6 +1073,15 @@ button {
   justify-content: space-between;
   align-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.navItemSort {
+  width: 100%;
+  height: 200px;
+  float: left;
+  position: relative;
+  background-color: #242424;
 }
 
 .memberNavItemLine {
@@ -1109,16 +1118,31 @@ button {
   width: 100%;
   height: auto;
   float: left;
+  position: relative;
 }
 
-.navIcon {
-  width: 20px;
-  height: 20px;
-  float: left;
-  background-image: url("../img/Nav_icon.svg");
-  background-position: 8px center;
-  background-repeat: no-repeat;
-  background-size: 40%;
+.navItems::after {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  transform: rotate(-90deg);
+  transition: all 0.5s ease;
+  width: 0;
+  height: 0;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.5em solid;
+  border-right: 0.35em solid transparent;
+  border-bottom: 0;
+  border-left: 0.35em solid transparent;
+  color: #666;
+}
+
+.memberNavItem:nth-child(2) > div.navItems::after, .memberNavItem:nth-child(3) > div.navItems::after {
+  display: inline-block;
 }
 
 .memberCenterRight {
@@ -1237,4 +1261,122 @@ button {
   font-size: 18px;
   font-weight: bold;
   color: #006699;
+}
+
+.itemTitle {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+.itemTitleLine {
+  width: 3px;
+  height: 20px;
+  background-color: #FF4646;
+  float: left;
+}
+
+.itemTitletext {
+  width: auto;
+  height: 20px;
+  line-height: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  float: left;
+  margin-left: 5px;
+  color: #006699;
+}
+
+.pointsBox, .giftsBox {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #707070;
+}
+
+.pointsBoxItem {
+  width: auto;
+  height: 50px;
+  float: left;
+  margin-right: 20px;
+}
+
+.pointsBoxItemLeft {
+  width: auto;
+  height: 50px;
+  float: left;
+  background-color: #006699;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0px 16px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.pointsBoxItemRight {
+  width: auto;
+  height: 50px;
+  float: left;
+  background-color: #fff;
+  color: #FF6666;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0px 30px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-top: 1px solid #006699;
+  border-bottom: 1px solid #006699;
+  border-right: 1px solid #006699;
+}
+
+.giftsBoxItem {
+  width: 180px;
+  height: 60px;
+  float: left;
+  margin-right: 20px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(241, 241, 241) 40%, rgb(225, 225, 225) 41%, rgb(246, 246, 246) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ffffff", endColorstr="#f6f6f6",GradientType=0 );
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.giftsBoxItemIcon {
+  width: auto;
+  height: 40px;
+  float: left;
+}
+.giftsBoxItemIcon img {
+  height: 100%;
+  width: auto;
+  float: left;
+}
+
+.giftsBoxItemtext {
+  width: auto;
+  height: 40px;
+  float: left;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #006699;
+  margin-left: 10px;
 }/*# sourceMappingURL=tw_main.css.map */
