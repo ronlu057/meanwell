@@ -5,9 +5,9 @@
                 <ul>
                     <li>首頁</li>
                     <li>></li>
-                    <li>帳號管理</li>
+                    <li>我的活動</li>
                     <li>></li>
-                    <li>個人資料</li>
+                    <li>進行中</li>
                 </ul>
             </div>
             <section class="MemberCentreContent">
@@ -38,64 +38,31 @@
                             <div class="qrcodeph"><img src="../img/qr-code-line.svg" alt=""></div>
                         </div>
                     </div>
-                    <div class="memberCenterRightContentBox">
+                    <div class="ActiveDirectory">
+                        <div class="activedirectoryitem" :class="{ active: activityset }" >
+                            進行中
+                        </div>
+                        <div class="activedirectoryitem">
+                            已結束
+                        </div>
+                        <div class="activedirectoryitem">
+                            已取消
+                        </div>
+                    </div>
+                    <div class="ActiveDirectoryContentBox">
                         <div class="itemTitle">
                             <div class="itemTitleLine"></div>
-                            <div class="itemTitletext">姓名</div>
+                            <div class="itemTitletext">我的活動列表</div>
                         </div>
-                        <div class="memberinfText">王小明</div>
-                        <div class="itemTitle">
-                            <div class="itemTitleLine"></div>
-                            <div class="itemTitletext">性別</div>
-                        </div>
-                        <div class="memberinfText">男</div>
-                        <div class="itemTitle">
-                            <div class="itemTitleLine"></div>
-                            <div class="itemTitletext">手機號碼</div>
-                        </div>
-                        <div class="memberinfText">09123456789</div>
-                        <div class="itemsS50L">
-                            <div class="itemTitle">
-                                <div class="itemTitleLine"></div>
-                                <div class="itemTitletext">證件類別</div>
+                        <div class="ActiveList">
+                            <div class="activelist-item-bar">
+                                <div class="activelist-item">
+                                    <div class="activelistdate">
+                                        <div class="activelistdateMonth">9</div>
+                                        <div class="activelistdateMonthbefore">月</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="memberinfText">身分證</div>
-                        </div>
-                        <div class="itemsS50R">
-                            <div class="itemTitle">
-                                <div class="itemTitleLine"></div>
-                                <div class="itemTitletext">證件號碼</div>
-                            </div>
-                            <div class="memberinfText">A123456789</div>
-                        </div>
-                        <div class="itemsS50L">
-                            <div class="itemTitle">
-                                <div class="itemTitleLine"></div>
-                                <div class="itemTitletext">任職公司</div>
-                            </div>
-                            <div class="memberinfText">明緯</div>
-                        </div>
-                        <div class="itemsS50R">
-                            <div class="itemTitle">
-                                <div class="itemTitleLine"></div>
-                                <div class="itemTitletext">職稱</div>
-                            </div>
-                            <div class="memberinfText">行政人員</div>
-                        </div>
-                        <div class="avatarBox">
-                            <div class="avatarTitle">
-                                <div class="avatarTitleText">個人照</div>
-                                <div class="avatarTitleIcon"><img src="../img/info-circle-fill.svg" alt=""></div>
-                            </div>
-                            <div class="avatarsText">
-                                *用於活動報到人臉辨識
-                            </div>
-                            <div class="avatarshint">
-                                <div class="avatarshintText">已上傳</div>
-                            </div>
-                        </div>
-                        <div class="persbuttonBox">
-                            <router-link to="/MemberInformationEditing"><button class="pageButtem">編輯資料</button></router-link>
                         </div>
                     </div>
                 </div>
@@ -105,15 +72,16 @@
 </template>
 <script setup>
     import { ref } from "vue"
-    const activeIdx = ref(1);
+    const activeIdx = ref(2);
     const activeIddx = ref(0);
+    const activityset = ref(1);
     const NavItemArr = ref([
         {
             name: 'SDG帳戶',
             path: '/MemberCentre',
         },{
             name: '帳號管理',
-            path: '/PersonalInformation',
+            path: '',
             item:[
                 {
                     name: '個人資料',
@@ -157,7 +125,7 @@
     };
     const handleMenuFnb = () => {
         activeIddx.value = 0;
-        if( activeIdx.value == 1 ){
+        if( activeIdx.value == 2 ){
             activeIddx.value = null;
         }
     };

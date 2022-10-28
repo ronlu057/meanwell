@@ -7,7 +7,7 @@
                     <li>></li>
                     <li>帳號管理</li>
                     <li>></li>
-                    <li>個人資料</li>
+                    <li>會員管理辦法</li>
                 </ul>
             </div>
             <section class="MemberCentreContent">
@@ -39,63 +39,10 @@
                         </div>
                     </div>
                     <div class="memberCenterRightContentBox">
-                        <div class="itemTitle">
-                            <div class="itemTitleLine"></div>
-                            <div class="itemTitletext">姓名</div>
-                        </div>
-                        <div class="memberinfText">王小明</div>
-                        <div class="itemTitle">
-                            <div class="itemTitleLine"></div>
-                            <div class="itemTitletext">性別</div>
-                        </div>
-                        <div class="memberinfText">男</div>
-                        <div class="itemTitle">
-                            <div class="itemTitleLine"></div>
-                            <div class="itemTitletext">手機號碼</div>
-                        </div>
-                        <div class="memberinfText">09123456789</div>
-                        <div class="itemsS50L">
-                            <div class="itemTitle">
-                                <div class="itemTitleLine"></div>
-                                <div class="itemTitletext">證件類別</div>
-                            </div>
-                            <div class="memberinfText">身分證</div>
-                        </div>
-                        <div class="itemsS50R">
-                            <div class="itemTitle">
-                                <div class="itemTitleLine"></div>
-                                <div class="itemTitletext">證件號碼</div>
-                            </div>
-                            <div class="memberinfText">A123456789</div>
-                        </div>
-                        <div class="itemsS50L">
-                            <div class="itemTitle">
-                                <div class="itemTitleLine"></div>
-                                <div class="itemTitletext">任職公司</div>
-                            </div>
-                            <div class="memberinfText">明緯</div>
-                        </div>
-                        <div class="itemsS50R">
-                            <div class="itemTitle">
-                                <div class="itemTitleLine"></div>
-                                <div class="itemTitletext">職稱</div>
-                            </div>
-                            <div class="memberinfText">行政人員</div>
-                        </div>
-                        <div class="avatarBox">
-                            <div class="avatarTitle">
-                                <div class="avatarTitleText">個人照</div>
-                                <div class="avatarTitleIcon"><img src="../img/info-circle-fill.svg" alt=""></div>
-                            </div>
-                            <div class="avatarsText">
-                                *用於活動報到人臉辨識
-                            </div>
-                            <div class="avatarshint">
-                                <div class="avatarshintText">已上傳</div>
-                            </div>
-                        </div>
-                        <div class="persbuttonBox">
-                            <router-link to="/MemberInformationEditing"><button class="pageButtem">編輯資料</button></router-link>
+                        <div class="editor">
+                            <h2>會員管理辦法</h2>
+                            <p>神這斗唱吃坐會可海立遠泉，苦旦對何着原；汁肖里讀次燈見間員發兒急訴春直愛清魚，像起牛。神這斗唱吃坐會可海立遠泉，苦旦對何着原；汁肖里讀次燈見間員發兒急訴春直愛清魚，像起牛。神這斗唱吃坐會可海立遠泉，苦旦對何着原；汁肖里讀次燈見間員發兒急訴春直愛清魚，像起牛。神這斗唱吃坐會可海立遠泉，苦旦對何着原；汁肖里讀次燈見間員發兒急訴春直愛清魚，像起牛。</p>
+                            <p>神這斗唱吃坐會可海立遠泉，苦旦對何着原；汁肖里讀次燈見間員發兒急訴春直愛清魚，像起牛。神這斗唱吃坐會可海立遠泉，苦旦對何着原；汁肖里讀次燈見間員發兒急訴春直愛清魚，像起牛。神這斗唱吃坐會可海立遠泉，苦旦對何着原；汁肖里讀次燈見間員發兒急訴春直愛清魚，像起牛。神這斗唱吃坐會可海立遠泉，苦旦對何着原；汁肖里讀次燈見間員發兒急訴春直愛清魚，像起牛。</p>
                         </div>
                     </div>
                 </div>
@@ -106,14 +53,14 @@
 <script setup>
     import { ref } from "vue"
     const activeIdx = ref(1);
-    const activeIddx = ref(0);
+    const activeIddx = ref(3);
     const NavItemArr = ref([
         {
             name: 'SDG帳戶',
             path: '/MemberCentre',
         },{
             name: '帳號管理',
-            path: '/PersonalInformation',
+            path: '',
             item:[
                 {
                     name: '個人資料',
@@ -156,7 +103,7 @@
         activeIddx.value = iddx;
     };
     const handleMenuFnb = () => {
-        activeIddx.value = 0;
+        activeIddx.value = 3;
         if( activeIdx.value == 1 ){
             activeIddx.value = null;
         }

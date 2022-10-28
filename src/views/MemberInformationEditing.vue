@@ -7,7 +7,7 @@
                     <li>></li>
                     <li>帳號管理</li>
                     <li>></li>
-                    <li>個人資料</li>
+                    <li>編輯個人資料</li>
                 </ul>
             </div>
             <section class="MemberCentreContent">
@@ -43,44 +43,67 @@
                             <div class="itemTitleLine"></div>
                             <div class="itemTitletext">姓名</div>
                         </div>
-                        <div class="memberinfText">王小明</div>
+                        <div class="memberinfTextinput">
+                            <input type="text" name="" id="" class="memberinfinput" placeholder="王小明">
+                        </div>
                         <div class="itemTitle">
                             <div class="itemTitleLine"></div>
                             <div class="itemTitletext">性別</div>
                         </div>
-                        <div class="memberinfText">男</div>
+                        <div class="memberinfTextinput">
+                            <input id="gender01" type="radio" name="gender" checked="checked">
+                            <label for="gender01">男</label>
+                            <input id="gender02" type="radio" name="gender">
+                            <label for="gender02">女</label>
+                        </div>
                         <div class="itemTitle">
                             <div class="itemTitleLine"></div>
                             <div class="itemTitletext">手機號碼</div>
                         </div>
-                        <div class="memberinfText">09123456789</div>
+                        <div class="memberinfTextinput">
+                            <input type="text" name="" id="" class="memberinfinput" placeholder="09123456789">
+                        </div>
                         <div class="itemsS50L">
                             <div class="itemTitle">
                                 <div class="itemTitleLine"></div>
                                 <div class="itemTitletext">證件類別</div>
                             </div>
-                            <div class="memberinfText">身分證</div>
+                            <div class="memberinfTextinput">
+                                <select class="memberinfinput">
+                                    <option selected disabled>身分證 / 台胞證 / 居留證 / 護照</option>
+                                    <option>身分證</option>
+                                    <option>台胞證</option>
+                                    <option>居留證</option>
+                                    <option>護照</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="itemsS50R">
                             <div class="itemTitle">
                                 <div class="itemTitleLine"></div>
                                 <div class="itemTitletext">證件號碼</div>
                             </div>
-                            <div class="memberinfText">A123456789</div>
+                            <div class="memberinfTextinput">
+                                <input type="text" name="" id="" class="memberinfinput" placeholder="A123456789">
+                            </div>
                         </div>
                         <div class="itemsS50L">
                             <div class="itemTitle">
                                 <div class="itemTitleLine"></div>
                                 <div class="itemTitletext">任職公司</div>
                             </div>
-                            <div class="memberinfText">明緯</div>
+                            <div class="memberinfTextinput">
+                                <input type="text" name="" id="" class="memberinfinput" placeholder="明緯">
+                            </div>
                         </div>
                         <div class="itemsS50R">
                             <div class="itemTitle">
                                 <div class="itemTitleLine"></div>
                                 <div class="itemTitletext">職稱</div>
                             </div>
-                            <div class="memberinfText">行政人員</div>
+                            <div class="memberinfTextinput">
+                                <input type="text" name="" id="" class="memberinfinput" placeholder="行政人員">
+                            </div>
                         </div>
                         <div class="avatarBox">
                             <div class="avatarTitle">
@@ -92,10 +115,11 @@
                             </div>
                             <div class="avatarshint">
                                 <div class="avatarshintText">已上傳</div>
+                                <button class="avatarupload">上傳</button>
                             </div>
                         </div>
                         <div class="persbuttonBox">
-                            <router-link to="/MemberInformationEditing"><button class="pageButtem">編輯資料</button></router-link>
+                            <router-link to="/PersonalInformation"><button class="pageButtem">確認送出</button></router-link>
                         </div>
                     </div>
                 </div>
@@ -113,7 +137,7 @@
             path: '/MemberCentre',
         },{
             name: '帳號管理',
-            path: '/PersonalInformation',
+            path: '',
             item:[
                 {
                     name: '個人資料',

@@ -17,7 +17,7 @@
                         </div></router-link>
                         <div class="navItemSort">
                             <div class="navItemSortContent">
-                                <div class="navItemSortContentItem" :class="{ active: activeIddx === iddx }" v-for="(itax, iddx) in items.item" :key="itax.name" @click="handleMenuFna(iddx)"><router-link :to="items.path">{{ itax.name }}</router-link></div>
+                                <div class="navItemSortContentItem" :class="{ active: activeIddx === iddx }" v-for="(itax, iddx) in items.item" :key="itax.name" @click="handleMenuFna(iddx)"><router-link :to="itax.path">{{ itax.name }}</router-link></div>
                             </div>
                         </div>
                     </div>
@@ -93,32 +93,29 @@
             path: '/MemberCentre',
         },{
             name: '帳號管理',
-            path: '/PersonalInformation',
+            path: '',
             item:[
                 {
                     name: '個人資料',
                     path: '/PersonalInformation',
                 },{
                     name: '登入設定',
-                    path: '/home',
+                    path: '/LoginSettings',
                 },{
                     name: '變更密碼',
-                    path: '/home',  
+                    path: '/ChangePassword',  
                 },{
                     name: '會員管理辦法',
-                    path: '/home',  
+                    path: '/MembershipManagementMeasures',  
                 }
             ]
         },{
             name: '我的活動',
-            path: '/home', 
+            path: '', 
             item:[
                 {
-                    name: '活動列表',
-                    path: '/goods',
-                },{
                     name: '進行中',
-                    path: '/home',
+                    path: '/ActivityListOngoing',
                 },{
                     name: '已結束',
                     path: '/home',  
@@ -139,6 +136,6 @@
         activeIddx.value = iddx;
     };
     const handleMenuFnb = () => {
-        activeIddx.value = 0;
+        activeIddx.value = null;
     };
 </script>

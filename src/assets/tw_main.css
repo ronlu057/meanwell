@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   font-family: "Microsoft JhengHei", "serif";
   box-sizing: border-box;
@@ -1448,4 +1449,415 @@ button {
   font-weight: bold;
   color: #006699;
   margin-left: 10px;
+}
+
+.memberinfText, .memberinfTextinput {
+  width: 100%;
+  height: 50px;
+  float: left;
+  margin-top: 10px;
+  border-bottom: 1px dashed rgb(100, 100, 100);
+  display: inline-flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #555555;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.memberinfTextinput {
+  border-bottom: 0px;
+  position: relative;
+}
+
+.itemsS50L, .itemsS50R {
+  width: calc(50% - 10px);
+  height: auto;
+  float: left;
+  margin-right: 10px;
+  margin-left: 0px;
+}
+
+.itemsS50R {
+  margin-right: 0px;
+  margin-left: 10px;
+}
+
+.avatarBox {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+.avatarTitle {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+.avatarTitleText {
+  width: auto;
+  height: auto;
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  color: #006699;
+  margin-right: 10px;
+  line-height: 20px;
+}
+
+.avatarTitleIcon {
+  width: 20px;
+  height: 20px;
+  float: left;
+}
+.avatarTitleIcon img {
+  width: 100%;
+  height: auto;
+  float: left;
+  max-width: 100%;
+}
+
+.avatarsText {
+  width: 100%;
+  height: auto;
+  float: left;
+  font-size: 16px;
+  color: #818181;
+  margin: 6px 0px;
+}
+
+.avatarshint {
+  width: 100%;
+  height: 30px;
+  float: left;
+}
+
+.avatarshintText {
+  width: auto;
+  height: 30px;
+  float: left;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #555;
+}
+
+.persbuttonBox {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-top: 60px;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.memberinfinput {
+  width: 100%;
+  height: 50px;
+  float: left;
+  background-color: #fff;
+  border: 0px solid #ccc;
+  border-radius: 5px;
+  padding: 0px 20px;
+  font-size: 16px;
+  color: #999999;
+  line-height: 50px;
+}
+
+.avatarupload {
+  width: 80px;
+  height: 30px;
+  float: left;
+  font-size: 16px;
+  color: #555555;
+  background-color: #DBDBDB;
+  border: 1px solid #707070;
+  border-radius: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.memberinfTextinput > input[type=radio] {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  opacity: 0;
+  margin-left: -26px;
+}
+
+.memberinfTextinput > input[type=radio]:checked + label:before, .memberinfTextinput > input[type=radio] + label:before {
+  content: "";
+  height: 16px;
+  width: 16px;
+  display: block;
+  border: 2px solid #8d4141;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -26px;
+}
+
+.memberinfTextinput > input[type=radio]:checked + label:before {
+  height: 10px;
+  width: 10px;
+  border: 5px solid #8d4141;
+}
+
+.memberinfTextinput > label {
+  line-height: 21px;
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 26px;
+  padding-right: 30px;
+}
+
+.LoginSettingsItem {
+  width: 100%;
+  height: 60px;
+  float: left;
+  margin-bottom: 10px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+
+.ls_icon {
+  width: 60px;
+  height: 60px;
+  float: left;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.ls_icon img {
+  width: 40%;
+  height: auto;
+  float: left;
+}
+
+.ls_name {
+  width: 140px;
+  height: auto;
+  float: left;
+  font-size: 18px;
+  font-family: "Source Han Sans TW";
+  padding: 0px 20px;
+  color: #10325B;
+}
+
+.ls_linkIcon {
+  width: 20px;
+  height: 20px;
+  float: left;
+}
+.ls_linkIcon img {
+  width: 20px;
+  height: 20px;
+  float: left;
+}
+
+.ls_butten {
+  width: 150px;
+  height: 40px;
+  float: left;
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #006699;
+  text-align: center;
+  line-height: 40px;
+  margin-left: 30px;
+}
+
+.linked {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(235, 235, 235) 50%, rgb(226, 226, 226) 51%, rgb(230, 230, 230) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#7db9e8", endColorstr="#1e5799",GradientType=0 );
+}
+
+.unlinked {
+  background: rgb(7, 117, 172);
+  background: linear-gradient(to bottom, rgb(7, 117, 172) 0%, rgb(0, 102, 153) 50%, rgb(0, 74, 112) 51%, rgb(0, 102, 153) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#7db9e8", endColorstr="#1e5799",GradientType=0 );
+  color: #fff;
+}
+
+.changepassword_view {
+  width: auto;
+  height: 20px;
+  float: left;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+.changepassword_view img {
+  width: auto;
+  height: 100%;
+  float: left;
+}
+
+.editor {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+.editor h2 {
+  width: 100%;
+  height: auto;
+  float: left;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: left;
+  color: #006699;
+  border-left: 3px solid #FF4646;
+  padding-left: 6px;
+}
+.editor h3 {
+  width: 100%;
+  height: auto;
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  color: #006699;
+  padding-left: 0px;
+}
+.editor p {
+  width: 100%;
+  height: auto;
+  float: left;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: bold;
+  text-align: left;
+  color: #555;
+  padding-left: 0px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.ActiveDirectory {
+  width: 100%;
+  height: 100px;
+  float: left;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding: 10px 50px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+
+.ActiveDirectoryContentBox {
+  width: 100%;
+  height: auto;
+  min-height: calc(100% - 200px - 40px);
+  float: left;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding: 50px;
+  padding: 60px;
+}
+
+.activedirectoryitem {
+  width: auto;
+  height: 50px;
+  float: left;
+  border: 1px solid rgb(0, 102, 153);
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #A5A5A5;
+  padding: 0px 35px;
+  margin-right: 10px;
+}
+
+.activedirectoryitem.active {
+  background-color: rgb(0, 102, 153);
+  color: #fff;
+}
+
+.ActiveList {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-top: 20px;
+}
+
+.activelist-item-bar {
+  width: 100%;
+  height: auto;
+  float: left;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #707070;
+}
+
+.activelist-item {
+  width: 100%;
+  height: 80px;
+  float: left;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(241, 241, 241) 50%, rgb(225, 225, 225) 51%, rgb(246, 246, 246) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ffffff", endColorstr="#f6f6f6",GradientType=0 );
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.activelistdate {
+  width: 60px;
+  height: 60px;
+  float: left;
+  background-color: #006699;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 5px;
+  position: relative;
+}
+
+.activelistdateMonth {
+  width: auto;
+  height: auto;
+  float: left;
+  position: absolute;
+  font-family: "Roboto";
+  font-size: 33px;
+  font-weight: bold;
+  color: #fff;
+  right: 20px;
+  text-align: right;
+}
+
+.activelistdateMonthbefore {
+  content: "月";
+  width: auto;
+  height: auto;
+  float: left;
+  font-size: 0.1em;
+  position: absolute;
+  bottom: 16px;
+  color: #fff;
+  right: 4px;
 }/*# sourceMappingURL=tw_main.css.map */
