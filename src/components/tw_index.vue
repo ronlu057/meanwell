@@ -1,8 +1,18 @@
 
-<script>
-
+<script setup>
+    import axios from "axios";
+    import {ref ,onMounted} from 'vue';
+    const data = ref([])
+    onMounted((res) =>{
+        axios.get('https://dog.ceo/api/breeds/image/random')
+            .then((res)=>{
+                data.value = res.data;
+                console.log( data.value )
+            })
+        })
 </script>
 <template>
+    <div class="page_main">
     <main>
         <div class="page_content">
             <div class="indexPageTitle">多元服務，價值共享</div>
@@ -83,4 +93,5 @@
             </section>
         </div>
     </main>
+    </div>
 </template>

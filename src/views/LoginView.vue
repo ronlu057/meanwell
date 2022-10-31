@@ -1,4 +1,5 @@
 <template>
+<div class="page_main">
     <main>
     <div class="page_content">
       <section class="loginTopIcon">
@@ -51,6 +52,7 @@
       </section>
     </div>
   </main>
+  </div>
 </template>
 <script>
 

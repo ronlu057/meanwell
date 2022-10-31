@@ -1,4 +1,5 @@
 <template>
+<div class="page_main">
     <main>
         <div class="page_content">
             <div class="PageBreadCrumbs">
@@ -28,7 +29,7 @@
                             <div class="memberUserBoxLeft"><img src="../img/memberUserIcon.svg" alt=""></div>
                             <div class="memberUserName">王小明  您好!</div>
                         </div>
-                        <div class="memberUserQRcord">
+                        <div class="memberUserQRcord" @click="qropen()">
                             <div class="MembershipLevelBox">
                                 <div class="memberleve">銀卡會員</div>
                                 <div class="memberqrtext">我的會員QRCORD</div>
@@ -82,6 +83,14 @@
             </section>
         </div>
     </main>
+    <div class="leyboxbg" :class="{ active: qrcshow }" @click="qrclosures()">
+        <div class="leyboxcontent">
+            <div class="leyboxcontent_txt">會員 QRCORD</div>
+            <div class="qrcordphoto"><img src="../img/qrcode.svg" alt=""></div>
+            <div class="closure_icon_set" @click="qrclosures()"><img src="../img/closure_icon.svg" alt=""></div>
+        </div>
+    </div>
+</div>
 </template>
 <script setup>
     import { ref } from "vue"
@@ -118,17 +127,18 @@
                     path: '/ActivityListOngoing',
                 },{
                     name: '已結束',
-                    path: '/home',  
+                    path: '/ActivityListOver',  
                 },{
                     name: '已取消',
-                    path: '/home',  
+                    path: '/ActivityListCancelled',  
                 }
             ] 
         },{
             name: '領取分票',
-            path: '/home',  
+            path: '/VotesTaken',  
         }
     ]);
+    const qrcshow = ref(false);
     const handleMenuFn = (idx) => {
       activeIdx.value = idx;
     };
@@ -138,4 +148,10 @@
     const handleMenuFnb = () => {
         activeIddx.value = null;
     };
+    const qropen = () => {
+        qrcshow.value = true;
+    }
+    const qrclosures = () => {
+        qrcshow.value = false;
+    }
 </script>

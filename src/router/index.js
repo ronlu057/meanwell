@@ -11,6 +11,14 @@ import LoginSettings from '../views/LoginSettings.vue'
 import ChangePassword from '../views/ChangePassword.vue'
 import MembershipManagementMeasures from '../views/MembershipManagementMeasures.vue'
 import ActivityListOngoing from '../views/ActivityListOngoing.vue'
+import ActivityListOver from '../views/ActivityListOver.vue'
+import ActivityListCancelled from '../views/ActivityListCancelled.vue'
+import ActivitiesOngoing from '../views/ActivitiesOngoing.vue'
+import ActivitiesOver from '../views/ActivitiesOver.vue'
+import ActivitiesCancelled from '../views/ActivitiesCancelled.vue'
+import EventTicketing from '../views/EventTicketing.vue';
+import CancelRegistration from '../views/CancelRegistration.vue'
+import VotesTaken from '../views/VotesTaken.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -88,6 +96,54 @@ const router = createRouter({
       path: '/ActivityListOngoing',
       name: 'ActivityListOngoing',
       component: ActivityListOngoing
+    }
+    ,
+    {
+      path: '/ActivityListOver',
+      name: 'ActivityListOver',
+      component: ActivityListOver
+    }
+    ,
+    {
+      path: '/ActivityListCancelled',
+      name: 'ActivityListCancelled',
+      component: ActivityListCancelled
+    }
+    ,
+    {
+      path: '/ActivitiesOngoing',
+      name: 'ActivitiesOngoing',
+      component: ActivitiesOngoing
+    }
+    ,
+    {
+      path: '/ActivitiesOver',
+      name: 'ActivitiesOver',
+      component: ActivitiesOver
+    }
+    ,
+    {
+      path: '/ActivitiesCancelled',
+      name: 'ActivitiesCancelled',
+      component: ActivitiesCancelled
+    }
+    ,
+    {
+      path: '/EventTicketing',
+      name: 'EventTicketing',
+      component: EventTicketing
+    }
+    ,
+    {
+      path: '/CancelRegistration',
+      name: 'CancelRegistration',
+      component: CancelRegistration
+    }
+    ,
+    {
+      path: '/VotesTaken',
+      name: 'VotesTaken',
+      component: VotesTaken
     }
   ]
 })

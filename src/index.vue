@@ -4,11 +4,9 @@
 </script>
 
 <template>
-  <div class="page_main">
     <TwHeader />
     <RouterView />
     <TwFooter />
-  </div>
 </template>
 
 <style>

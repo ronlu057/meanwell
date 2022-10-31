@@ -1,4 +1,5 @@
 <template>
+<div class="page_main">
     <main>
         <div class="page_content">
             <div class="PageBreadCrumbs">
@@ -30,7 +31,7 @@
                             <div class="memberUserBoxLeft"><img src="../img/memberUserIcon.svg" alt=""></div>
                             <div class="memberUserName">王小明  您好!</div>
                         </div>
-                        <div class="memberUserQRcord">
+                        <div class="memberUserQRcord" @click="qropen()">
                             <div class="MembershipLevelBox">
                                 <div class="memberleve">銀卡會員</div>
                                 <div class="memberqrtext">我的會員QRCORD</div>
@@ -39,14 +40,8 @@
                         </div>
                     </div>
                     <div class="ActiveDirectory">
-                        <div class="activedirectoryitem" :class="{ active: activityset }" >
-                            進行中
-                        </div>
-                        <div class="activedirectoryitem">
-                            已結束
-                        </div>
-                        <div class="activedirectoryitem">
-                            已取消
+                        <div class="activedirectoryitem" v-for="(itemas,idw) in Activitystate" :key="itemas.state"  :class="{ active: activityset === idw }" @click="stateset(idw)">
+                            <router-link :to="itemas.path">{{ itemas.state }}</router-link>
                         </div>
                     </div>
                     <div class="ActiveDirectoryContentBox">
@@ -55,26 +50,99 @@
                             <div class="itemTitletext">我的活動列表</div>
                         </div>
                         <div class="ActiveList">
-                            <div class="activelist-item-bar">
+                            <RouterLink to="/ActivitiesOngoing"><div class="activelist-item-bar">
+                                <div class="activelist-item">
+                                    <div class="activelistdate">
+                                        <div class="activelistdateMonth">12</div>
+                                        <div class="activelistdateMonthbefore">月</div>
+                                    </div>
+                                    <div class="activelistTextBar">
+                                        <div class="activelistText">活動場次：2022/10/01 10:00-12:00</div>
+                                        <div class="activelistText">主題：蘇州智慧園區開幕儀式</div>
+                                        <div class="activelistText">地點：蘇州智慧園區 / 線上直播</div>
+                                    </div>
+                                </div>
+                            </div></RouterLink>
+                            <RouterLink to="/ActivitiesOngoing"><div class="activelist-item-bar">
+                                <div class="activelist-item">
+                                    <div class="activelistdate">
+                                        <div class="activelistdateMonth">11</div>
+                                        <div class="activelistdateMonthbefore">月</div>
+                                    </div>
+                                    <div class="activelistTextBar">
+                                        <div class="activelistText">活動場次：2022/10/01 10:00-12:00</div>
+                                        <div class="activelistText">主題：蘇州智慧園區開幕儀式</div>
+                                        <div class="activelistText">地點：蘇州智慧園區 / 線上直播</div>
+                                    </div>
+                                </div>
+                            </div></RouterLink>
+                            <RouterLink to="/ActivitiesOngoing"><div class="activelist-item-bar">
+                                <div class="activelist-item">
+                                    <div class="activelistdate">
+                                        <div class="activelistdateMonth">10</div>
+                                        <div class="activelistdateMonthbefore">月</div>
+                                    </div>
+                                    <div class="activelistTextBar">
+                                        <div class="activelistText">活動場次：2022/10/01 10:00-12:00</div>
+                                        <div class="activelistText">主題：蘇州智慧園區開幕儀式</div>
+                                        <div class="activelistText">地點：蘇州智慧園區 / 線上直播</div>
+                                    </div>
+                                </div>
+                            </div></RouterLink>
+                            <RouterLink to="/ActivitiesOngoing"><div class="activelist-item-bar">
                                 <div class="activelist-item">
                                     <div class="activelistdate">
                                         <div class="activelistdateMonth">9</div>
                                         <div class="activelistdateMonthbefore">月</div>
                                     </div>
+                                    <div class="activelistTextBar">
+                                        <div class="activelistText">活動場次：2022/10/01 10:00-12:00</div>
+                                        <div class="activelistText">主題：蘇州智慧園區開幕儀式</div>
+                                        <div class="activelistText">地點：蘇州智慧園區 / 線上直播</div>
+                                    </div>
                                 </div>
-                            </div>
+                            </div></RouterLink>
+                            <RouterLink to="/ActivitiesOngoing"><div class="activelist-item-bar">
+                                <div class="activelist-item">
+                                    <div class="activelistdate">
+                                        <div class="activelistdateMonth">9</div>
+                                        <div class="activelistdateMonthbefore">月</div>
+                                    </div>
+                                    <div class="activelistTextBar">
+                                        <div class="activelistText">活動場次：2022/10/01 10:00-12:00</div>
+                                        <div class="activelistText">主題：蘇州智慧園區開幕儀式</div>
+                                        <div class="activelistText">地點：蘇州智慧園區 / 線上直播</div>
+                                    </div>
+                                </div>
+                            </div></RouterLink>
+                        </div>
+                        <div class="pagination">
+                            <a href="javascript:;"><div class="pagination_item_previous"> <img src="../img/chevron-left.svg" alt=""> </div></a>
+                            <a href="javascript:;"><div class="pagination_item"> 1 </div></a>
+                            <a href="javascript:;"><div class="pagination_item"> 2 </div></a>
+                            <a href="javascript:;"><div class="pagination_item"> 3 </div></a>
+                            <a href="javascript:;"><div class="pagination_item"> 4 </div></a>
+                            <a href="javascript:;"><div class="pagination_item_next"> <img src="../img/chevron-right.svg" alt=""> </div></a>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
     </main>
+    <div class="leyboxbg" :class="{ active: qrcshow }" @click="qrclosures()">
+        <div class="leyboxcontent">
+            <div class="leyboxcontent_txt">會員 QRCORD</div>
+            <div class="qrcordphoto"><img src="../img/qrcode.svg" alt=""></div>
+            <div class="closure_icon_set" @click="qrclosures()"><img src="../img/closure_icon.svg" alt=""></div>
+        </div>
+    </div>
+</div>
 </template>
 <script setup>
     import { ref } from "vue"
     const activeIdx = ref(2);
     const activeIddx = ref(0);
-    const activityset = ref(1);
+    const activityset = ref(0);
     const NavItemArr = ref([
         {
             name: 'SDG帳戶',
@@ -106,16 +174,20 @@
                     path: '/ActivityListOngoing',
                 },{
                     name: '已結束',
-                    path: '/home',  
+                    path: '/ActivityListOver',  
                 },{
                     name: '已取消',
-                    path: '/home',  
+                    path: '/ActivityListCancelled',  
                 }
             ] 
         },{
             name: '領取分票',
-            path: '/home',  
+            path: '/VotesTaken',  
         }
+    ]);
+    const qrcshow = ref(false);
+    const Activitystate = ref([
+        { state: '進行中',path: '/ActivityListOngoing' },{ state: '已結束',path: '/ActivityListOver' },{ state: '已取消',path: '/ActivityListCancelled' }
     ]);
     const handleMenuFn = (idx) => {
       activeIdx.value = idx;
@@ -129,4 +201,14 @@
             activeIddx.value = null;
         }
     };
+    const stateset = (idw) => {
+        activityset.value = idw;
+        console.log(activityset.value)
+    };
+    const qropen = () => {
+        qrcshow.value = true;
+    }
+    const qrclosures = () => {
+        qrcshow.value = false;
+    }
 </script>
