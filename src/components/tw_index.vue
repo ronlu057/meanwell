@@ -19,26 +19,26 @@
             <section class="indexActivityBar">
                 <div class="indAct_item_Box">
                     <ul>
-                        <a href=""><li>
+                        <router-link to="/Course/Course_Overview"><li>
                             <div class="atcImgBox"><img src="../img/activity_1.svg" alt=""></div>
                             <div class="atcText Conference">會議活動</div>
-                        </li></a>
-                        <a href=""><li>
+                        </li></router-link>
+                        <router-link to="/Course/Course_Overview"><li>
                             <div class="atcImgBox"><img src="../img/activity_2.svg" alt=""></div>
                             <div class="atcText EducationTraining">教育訓練</div>
-                        </li></a>
-                        <a href=""><li>
+                        </li></router-link>
+                        <router-link to="/Course/Course_Overview"><li>
                             <div class="atcImgBox"><img src="../img/activity_3.svg" alt=""></div>
                             <div class="atcText TourGuide">活動導覽</div>
-                        </li></a>
-                        <a href=""><li>
+                        </li></router-link>
+                        <router-link to="/Course/Course_Overview"><li>
                             <div class="atcImgBox"><img src="../img/activity_4.svg" alt=""></div>
                             <div class="atcText CaringCare">關懷照護</div>
-                        </li></a>
-                        <a href=""><li>
+                        </li></router-link>
+                        <router-link to="/Course/Course_Overview"><li>
                             <div class="atcImgBox"><img src="../img/activity_5.svg" alt=""></div>
                             <div class="atcText GiftingPlatform">禮贈平台</div>
-                        </li></a>
+                        </li></router-link>
                     </ul>
                 </div>
             </section>

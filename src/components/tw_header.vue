@@ -17,10 +17,10 @@
                         <div class="signinmenutext">會員中心</div>
                     </div></RouterLink>
                     <div class="Tosignout">登出</div>
-                    <div class="sdgMenuItem2">
+                    <RouterLink to="/Calendar"><div class="sdgMenuItem2">
                         <div class="signinicon"><img src="../img/calendar_icon.svg" alt=""></div>
                         <div class="signinmenutext">行事曆</div>
-                    </div>
+                    </div></RouterLink>
                 </div>
                 <div class="sdgMenuItem">
                     <div class="language_item"><img src="../img/language_icon.svg" alt=""></div>

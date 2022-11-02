@@ -19,6 +19,15 @@ import ActivitiesCancelled from '../views/ActivitiesCancelled.vue'
 import EventTicketing from '../views/EventTicketing.vue';
 import CancelRegistration from '../views/CancelRegistration.vue'
 import VotesTaken from '../views/VotesTaken.vue'
+import CourseOverview from '../views/Course_Overview.vue'
+import CourseContent from '../views/CourseContent.vue'
+import RegistrationForm from '../views/RegistrationForm.vue'
+import RegistrationFormForeignGuests from '../views/RegistrationForm_ForeignGuests.vue'
+import RegistrationFormNext from '../views/RegistrationFormNext.vue'
+import ServiceContent from '../views/ServiceContent.vue';
+import MissionVision from '../views/MissionVision.vue';
+import MembershipTermsofService from '../views/MembershipTermsofService.vue'
+import Calendar from '../views/Calendar.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -144,6 +153,60 @@ const router = createRouter({
       path: '/VotesTaken',
       name: 'VotesTaken',
       component: VotesTaken
+    }
+    ,
+    {
+      path: '/Course/Course_Overview',
+      name: 'Course_Overview',
+      component: CourseOverview
+    }
+    ,
+    {
+      path: '/Course/CourseContent',
+      name: 'CourseContent',
+      component: CourseContent
+    }
+    ,
+    {
+      path: '/Course/RegistrationForm',
+      name: 'RegistrationForm',
+      component: RegistrationForm
+    }
+    ,
+    {
+      path: '/Course/RegistrationForm_ForeignGuests',
+      name: 'RegistrationFormForeignGuests',
+      component: RegistrationFormForeignGuests
+    }
+    ,
+    {
+      path: '/Course/RegistrationFormNext',
+      name: 'RegistrationFormNext',
+      component: RegistrationFormNext
+    }
+    ,
+    {
+      path: '/ServiceContent',
+      name: 'ServiceContent',
+      component: ServiceContent
+    }
+    ,
+    {
+      path: '/MissionVision',
+      name: 'MissionVision',
+      component: MissionVision
+    }
+    ,
+    {
+      path: '/MembershipTermsofService',
+      name: 'MembershipTermsofService',
+      component: MembershipTermsofService
+    }
+    ,
+    {
+      path: '/Calendar',
+      name: 'Calendar',
+      component: Calendar
     }
   ]
 })

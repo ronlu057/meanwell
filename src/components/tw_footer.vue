@@ -18,14 +18,14 @@
                 <div class="meunbar_itembar">
                     <div class="meunbar_itembar_title">關於共享機</div>
                     <ul>
-                        <li><a href="javascript:;">服務內容</a></li>
-                        <li><a href="javascript:;">使命願景</a></li>
+                        <li><router-link to="/ServiceContent">服務內容</router-link></li>
+                        <li><router-link to="/MissionVision">使命願景</router-link></li>
                     </ul>
                 </div>
                 <div class="meunbar_itembar">
                     <div class="meunbar_itembar_title">服務</div>
                     <ul>
-                        <li><a href="javascript:;">會員服務條款</a></li>
+                        <li><router-link to="/MembershipTermsofService">會員服務條款</router-link></li>
                         <li><a href="javascript:;">常見問題</a></li>
                     </ul>
                 </div>
