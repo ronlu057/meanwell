@@ -26,7 +26,7 @@
                     <div class="meunbar_itembar_title">服務</div>
                     <ul>
                         <li><router-link to="/MembershipTermsofService">會員服務條款</router-link></li>
-                        <li><a href="javascript:;">常見問題</a></li>
+                        <li><router-link to="/CommonProblem">常見問題</router-link></li>
                     </ul>
                 </div>
             </div>

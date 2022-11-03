@@ -28,6 +28,7 @@ import ServiceContent from '../views/ServiceContent.vue';
 import MissionVision from '../views/MissionVision.vue';
 import MembershipTermsofService from '../views/MembershipTermsofService.vue'
 import Calendar from '../views/Calendar.vue'
+import CommonProblem from '../views/CommonProblem.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -207,6 +208,12 @@ const router = createRouter({
       path: '/Calendar',
       name: 'Calendar',
       component: Calendar
+    }
+    ,
+    {
+      path: '/CommonProblem',
+      name: 'CommonProblem',
+      component: CommonProblem
     }
   ]
 })

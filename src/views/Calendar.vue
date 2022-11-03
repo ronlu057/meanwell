@@ -273,10 +273,18 @@
                  </div>
             </div>
             <div class="CalendarContentBox">
-                <div class="Activecolumn"></div>
-                <div class="Activecolumn"></div>
-                <div class="Activecolumn"></div>
-                <div class="Activecolumn"></div>
+                <div class="Activecolumn">
+                    <div class="RemindDate">07 / 02</div>
+                    <div class="ReminderMessage">會議</div>
+                </div>
+                <div class="Activecolumn">
+                    <div class="RemindDate">07 / 19</div>
+                    <div class="ReminderMessage">會議</div>
+                </div>
+                <div class="Activecolumn">
+                    <div class="RemindDate">07 / 26</div>
+                    <div class="ReminderMessage">會議</div>
+                </div>
             </div>
         </div>
     </main>
