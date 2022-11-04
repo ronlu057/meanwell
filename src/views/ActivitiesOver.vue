@@ -118,7 +118,6 @@
     import { ref } from "vue"
     const activeIdx = ref(2);
     const activeIddx = ref(1);
-    const activityset = ref(1);
     const NavItemArr = ref([
         {
             name: 'SDG帳戶',

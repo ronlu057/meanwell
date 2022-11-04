@@ -257,17 +257,19 @@ button {
   align-content: center;
   max-width: 0px;
   overflow: hidden;
+  opacity: 0.002;
   transition: all 1s;
 }
 
 .lyboxbg.active {
   max-width: 100vw;
+  opacity: 1;
   transition: all 1s;
 }
 
 .mobile_menus {
   width: 80vw;
-  height: 80vh;
+  height: 94vh;
   padding: 20px;
   float: left;
   background-color: #fff;
@@ -309,7 +311,7 @@ button {
   width: 100%;
   height: auto;
   float: left;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .mobile_signoutView.active {
@@ -539,6 +541,14 @@ button {
   width: 80%;
   height: auto;
   float: left;
+}
+
+.mobile_member {
+  width: auto;
+  height: auto;
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .footer_meunbar {
@@ -3221,12 +3231,6 @@ button {
     flex-wrap: wrap;
     height: auto;
   }
-  .ls_butten {
-    width: 100%;
-    margin-left: 0px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
   .Course_List_Box a {
     width: 100%;
   }
@@ -3242,6 +3246,25 @@ button {
   }
   .mobile_bar {
     display: inline-flex;
+  }
+  .navItems {
+    height: 40px;
+  }
+  .memberNavItemtext {
+    height: 18px;
+    font-size: 18px;
+  }
+  .memberNav {
+    display: none;
+  }
+  .pageButtem {
+    height: 40px;
+    font-size: 18px;
+    background-color: #1D3F64;
+    background-image: inherit;
+    margin: 0px;
+    margin-bottom: 10px;
+    border-radius: 10px;
   }
 }
 @media screen and (max-width: 520px) {
@@ -3297,9 +3320,37 @@ button {
   }
   .CourseContentBox {
     padding: 20px;
+    margin-top: 20px;
   }
   .CalendarContentBox {
     padding: 20px;
+  }
+  .ls_butten {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .CoursebuttoonSet {
+    width: 112px;
+    height: 40px;
+    font-size: 18px;
+    background-size: contain;
+  }
+  .itemTr {
+    flex-wrap: wrap;
+  }
+  .itemtextright2 {
+    width: 100%;
+  }
+  .FunctionColumnButten {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .activitiesTitle, .EventTicketingTitle {
+    font-size: 26px;
   }
 }
 @media screen and (max-width: 430px) {
@@ -3385,7 +3436,8 @@ button {
     font-size: 14px;
   }
   .CourseContentBox {
-    margin: 0px;
+    margin: 0px 0px;
+    margin-top: 20px;
   }
   .question_barText {
     font-size: 18px;
@@ -3395,5 +3447,9 @@ button {
   }
   .question_bar::after {
     right: 10px;
+  }
+  .mobileSS {
+    margin: 0px 20px;
+    margin-top: 20px;
   }
 }/*# sourceMappingURL=tw_main.css.map */

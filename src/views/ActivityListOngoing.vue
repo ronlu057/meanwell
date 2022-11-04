@@ -39,11 +39,7 @@
                             <div class="qrcodeph"><img src="../img/qr-code-line.svg" alt=""></div>
                         </div>
                     </div>
-                    <div class="ActiveDirectory">
-                        <div class="activedirectoryitem" v-for="(itemas,idw) in Activitystate" :key="itemas.state"  :class="{ active: activityset === idw }" @click="stateset(idw)">
-                            <router-link :to="itemas.path">{{ itemas.state }}</router-link>
-                        </div>
-                    </div>
+                    
                     <div class="ActiveDirectoryContentBox">
                         <div class="itemTitle">
                             <div class="itemTitleLine"></div>
@@ -142,7 +138,6 @@
     import { ref } from "vue"
     const activeIdx = ref(2);
     const activeIddx = ref(0);
-    const activityset = ref(0);
     const NavItemArr = ref([
         {
             name: 'SDG帳戶',

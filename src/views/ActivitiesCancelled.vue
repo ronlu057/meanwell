@@ -118,7 +118,6 @@
     import { ref } from "vue"
     const activeIdx = ref(2);
     const activeIddx = ref(2);
-    const activityset = ref(2);
     const NavItemArr = ref([
         {
             name: 'SDG帳戶',
@@ -175,9 +174,5 @@
         if( activeIdx.value == 2 ){
             activeIddx.value = null;
         }
-    };
-    const stateset = (idw) => {
-        activityset.value = idw;
-        console.log(activityset.value)
     };
 </script>

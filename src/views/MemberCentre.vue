@@ -96,6 +96,8 @@
     import { ref } from "vue"
     const activeIdx = ref(0);
     const activeIddx = ref(null);
+    const mobileactiveIddx = ref(null);
+    const mobileactiveIdx = ref(0);
     const NavItemArr = ref([
         {
             name: 'SDG帳戶',

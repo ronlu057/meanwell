@@ -41,11 +41,6 @@
                             <div class="qrcodeph"><img src="../img/qr-code-line.svg" alt=""></div>
                         </div>
                     </div>
-                    <div class="ActiveDirectory">
-                        <div class="activedirectoryitem" v-for="(itemas,idw) in Activitystate" :key="itemas.state"  :class="{ active: activityset === idw }" @click="stateset(idw)">
-                            <router-link :to="itemas.path">{{ itemas.state }}</router-link>
-                        </div>
-                    </div>
                     <div class="ActiveDirectoryContentBox">
                         <div class="itemTitle">
                             <div class="itemTitleLine"></div>
@@ -131,7 +126,6 @@
     import { ref } from "vue"
     const activeIdx = ref(2);
     const activeIddx = ref(2);
-    const activityset = ref(2);
     const NavItemArr = ref([
         {
             name: 'SDG帳戶',
@@ -189,10 +183,6 @@
         if( activeIdx.value == 2 ){
             activeIddx.value = null;
         }
-    };
-    const stateset = (idw) => {
-        activityset.value = idw;
-        console.log(activityset.value)
     };
     const qropen = () => {
         qrcshow.value = true;

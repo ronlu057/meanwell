@@ -14,7 +14,7 @@
             <div class="BannerBar">
                 <div class="banner_content"><img src="../img/102766030_m.jpg" alt=""></div>
             </div>
-            <div class="CourseContentBox">
+            <div class="CourseContentBox mobileSS">
                 <div class="activitiesTitle">蘇州智慧園區開幕儀式</div>
                 <div class="Coursebuttoon"><router-link to="/Course/RegistrationForm"><button class="CoursebuttoonSet">前往報名</button></router-link></div>
                 <div class="itemTitle">

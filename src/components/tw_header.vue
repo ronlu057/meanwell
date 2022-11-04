@@ -2,7 +2,7 @@
     <div class="lyboxbg" :class="{active : mobileMenu}">
         <div class="mobile_menus">
             <div class="cles_icon" @click="colsMobileMenu()"><img src="../img/closure_icon.svg" alt=""></div>
-            <div class="logo_box"><RouterLink to="/"><img src="../img/Logos.svg" alt=""></RouterLink></div>
+            <div class="logo_box" @click="colsMobileMenu()"><RouterLink to="/"><img src="../img/Logos.svg" alt=""></RouterLink></div>
             <div class="mobile_signoutView active">
                 <div class="mobile_sdgMenuItem">
                     <div class="menu_item_text">進入管理系統</div>
@@ -16,12 +16,30 @@
                     <div class="signinicon"><img src="../img/member_icon.svg" alt=""></div>
                     <div class="signinmenutext">會員中心</div>
                 </div></RouterLink>
-                <div class="mobile_Tosignout" @click="colsMobileMenu()">登出</div>
+                <div class="mobile_member">
+                    <div class="memberNavItem" v-for="(items, idx) in NavItemArr" :key="items.name" :class="{ active: mobileactiveIdx === idx }" @click="handleMenuFn(idx)">
+                        <router-link :to="items.path"><div class="navItems"  @click="handleMenuFnb(ia)" >
+                            <div class="memberNavItemLine"></div>
+                            <div class="memberNavItemtext">{{ items.name }}</div>
+                        </div></router-link>
+                        <div class="navItemSort">
+                            <div class="navItemSortContent">
+                                <div class="navItemSortContentItem" :class="{ active: mobileactiveIddx === iddx }" v-for="(itax, iddx) in items.item" :key="itax.name" @click="handleMenuFna(iddx)">
+                                    <router-link :to="itax.path">{{ itax.name }}</router-link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <RouterLink to="/Calendar" @click="colsMobileMenu()"><div class="mobile_sdgMenuItem2">
                     <div class="signinicon"><img src="../img/calendar_icon.svg" alt=""></div>
                     <div class="signinmenutext">行事曆</div>
                 </div></RouterLink>
+
+                <div class="mobile_Tosignout" @click="colsMobileMenu()">登出</div>
             </div>
+            
         </div>
     </div>
     <header>
@@ -52,9 +70,9 @@
                     <div class="language_item">
                         <img src="../img/language_icon.svg" alt="">
                         <div class="language_bar">
-                            <div class="language_bar_item">繁中</div>
-                            <div class="language_bar_item">简中</div>
-                            <div class="language_bar_item">English</div>
+                            <a href="javascript:;"><div class="language_bar_item">繁中</div></a>
+                            <a href="javascript:;"><div class="language_bar_item">简中</div></a>
+                            <a href="javascript:;"><div class="language_bar_item">English</div></a>
                         </div>
                     </div>
                 </div>
@@ -65,10 +83,65 @@
 <script setup>
 import { ref } from "vue"
 const mobileMenu = ref(false);
+const mobileactiveIddx = ref(null);
+const mobileactiveIdx = ref(null);
+const NavItemArr = ref([
+        {
+            name: 'SDG帳戶',
+            path: '/MemberCentre',
+        },{
+            name: '帳號管理',
+            path: '',
+            item:[
+                {
+                    name: '個人資料',
+                    path: '/PersonalInformation',
+                },{
+                    name: '登入設定',
+                    path: '/LoginSettings',
+                },{
+                    name: '變更密碼',
+                    path: '/ChangePassword',  
+                },{
+                    name: '會員管理辦法',
+                    path: '/MembershipManagementMeasures',  
+                }
+            ]
+        },{
+            name: '我的活動',
+            path: '', 
+            item:[
+                {
+                    name: '進行中',
+                    path: '/ActivityListOngoing',
+                },{
+                    name: '已結束',
+                    path: '/ActivityListOver',  
+                },{
+                    name: '已取消',
+                    path: '/ActivityListCancelled',  
+                }
+            ] 
+        },{
+            name: '領取分票',
+            path: '/VotesTaken',  
+        }
+    ]);
+
 const openMobileMenu = () => {
     mobileMenu.value = true
+    mobileactiveIddx.value = null
+    mobileactiveIdx.value = null
 };
 const colsMobileMenu = () => {
     mobileMenu.value = false
 }
+const handleMenuFn = (idx) => {
+        mobileactiveIdx.value = idx;
+    };
+const handleMenuFna = (iddx) => {
+        mobileactiveIddx.value = iddx;
+        mobileMenu.value = false;
+    };
+    
 </script>
