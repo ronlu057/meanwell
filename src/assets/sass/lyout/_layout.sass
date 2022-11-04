@@ -24,6 +24,7 @@ footer
     align-content: center
     align-items: flex-start
     position: relative
+    padding: 0px 20px
     padding-top: 50px
     margin-top: -250px
 .page_main
@@ -193,3 +194,78 @@ button
     letter-spacing: 0.5px
     margin-bottom: 20px
     margin-top: 0px
+.lyboxbg
+    width: 100vw
+    height: 100vh
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: rgba( 255,255,255,.85 )
+    z-index: 12
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    align-content: center
+    max-width: 0px
+    overflow: hidden
+    transition: all 1s
+.lyboxbg.active
+    max-width: 100vw
+    transition: all 1s
+.mobile_menus
+    width: 80vw
+    height: 80vh
+    padding: 20px
+    float: left
+    background-color: #fff
+    border-radius: 10px
+    box-shadow: 0px 6px 18px rgba( 0, 0, 0, .16)
+    position: relative
+.cles_icon
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    position: absolute
+    top: 30px
+    right: 20px
+    cursor: pointer
+    img
+        width: 100%
+        height: auto
+        float: left
+.mobile_sdgMenuItem
+    width: 100%
+    height: auto
+    float: left
+    margin-top: 10px
+.mobile_signoutView
+    width: 100%
+    height: auto
+    float: left
+    margin-top: 20px
+.mobile_signinView
+    width: 100%
+    height: auto
+    float: left
+    margin-top: 20px
+.mobile_signoutView.active
+    display: none
+.mobile_signinView.active
+    display: none
+.mobile_sdgMenuItem, .mobile_sdgMenuItem2
+    display: inline-flex
+    align-content: center
+    align-items: center
+    justify-content: flex-start
+.mobile_Tosignout
+    width: 100%
+    height: auto
+    float: left
+    font-size: 16px
+    font-weight: bold
+    line-height: 30px
+    margin: 10px 0px
+    color: #F37A3E
+    

@@ -1,7 +1,7 @@
 <template>
 <div class="page_course_main">
     <main>
-        <div class="page_content">
+        <div class="page_content avt">
             <div class="PageBreadCrumbs">
                 <ul>
                     <li>首頁</li>
