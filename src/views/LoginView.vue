@@ -1,8 +1,7 @@
 <script setup>
     import {ref ,onMounted} from 'vue';
     const UserID = ref('');
-    const UserPassword = ref('');
-    
+    const UserPAW = ref('');
 </script>
 <template>
 <div class="page_main">
@@ -17,7 +16,7 @@
             <input type="email" class="User_accountInput" placeholder="請輸入電子信箱" required v-model="UserID" >
         </div>
         <div class="User_password">
-            <input type="password" class="User_accountInput" placeholder="請輸入密碼" required v-madel="UserPassword">
+            <input type="password" class="User_accountInput" placeholder="請輸入密碼" required v-model="UserPAW">
         </div>
         <div class="login_confirm_input">
             <label>
