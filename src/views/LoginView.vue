@@ -1,3 +1,9 @@
+<script setup>
+    import {ref ,onMounted} from 'vue';
+    const UserID = ref('');
+    const UserPassword = ref('');
+    
+</script>
 <template>
 <div class="page_main">
     <main>
@@ -8,10 +14,10 @@
       <section class="loginContentBox">
         <div class="ContentBoxTitle">會員登入 / 註冊</div>
         <div class="User_account">
-            <input type="text" class="User_accountInput" placeholder="請輸入電子信箱" required>
+            <input type="email" class="User_accountInput" placeholder="請輸入電子信箱" required v-model="UserID" >
         </div>
         <div class="User_password">
-            <input type="password" class="User_accountInput" placeholder="請輸入密碼" required>
+            <input type="password" class="User_accountInput" placeholder="請輸入密碼" required v-madel="UserPassword">
         </div>
         <div class="login_confirm_input">
             <label>
@@ -54,6 +60,4 @@
   </main>
   </div>
 </template>
-<script>
 
-</script>

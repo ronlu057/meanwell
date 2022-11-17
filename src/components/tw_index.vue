@@ -1,15 +1,21 @@
 
 <script setup>
+    import qs from 'qs'
     import axios from "axios";
     import {ref ,onMounted} from 'vue';
-    const data = ref([])
+    const data = ref([]);
     onMounted((res) =>{
-        axios.get('https://dog.ceo/api/breeds/image/random')
+        axios.post('https://demo18.e-giant.com.tw/API_App/HomePage/NewsList',qs.stringify({
+            'u_id': 'string',
+            'AuthCode': 'string',
+            'Lang': 'string'
+        }))
             .then((res)=>{
                 data.value = res.data;
                 console.log( data.value )
             })
-        })
+            
+    })
 </script>
 <template>
     <div class="page_main">

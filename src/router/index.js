@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue'
 import TwLogin from '../views/LoginView.vue'
 import ForgotPassword from '../views/ForgotPasswordView.vue'
@@ -31,12 +31,12 @@ import Calendar from '../views/Calendar.vue'
 import CommonProblem from '../views/CommonProblem.vue'
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'index',
-      component: HomeView
+      component: () => import('../components/tw_index.vue')
     },
     {
       path: '/about',
