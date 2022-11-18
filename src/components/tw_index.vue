@@ -1,7 +1,6 @@
 
 <script setup>
-    import qs from 'qs'
-    import axios from "axios";
+    
     import {ref ,onMounted} from 'vue';
     const data = ref([]);
     onMounted((res) =>{

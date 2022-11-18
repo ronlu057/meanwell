@@ -1,7 +1,35 @@
 <script setup>
     import {ref ,onMounted} from 'vue';
+    import { userLogin } from '../api.js';
     const UserID = ref('');
     const UserPAW = ref('');
+    const handleLogin = () => {
+        let userEmail = UserID.value;
+        let password = UserPAW.value;
+        if ( userEmail !== '' && password !== '' ) {
+            userLogin ({ 
+                "u_id": UserID.value,
+                "RA": UserPAW.value,
+                "mpDeviceID": "string",
+                "mpFCMID": "string",
+                "os": "string",
+                "mpPhoneType": "string",
+                "mpPhoneSize": "string",
+                "Vers": "string",
+                "AppVers": "string",
+                "Lang": "string"
+            })
+            .then(res => {
+                console.log(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        } else {
+            alert('請輸入您的帳號密碼')
+        }
+    };
+
 </script>
 <template>
 <div class="page_main">
@@ -27,7 +55,7 @@
         </div>
         <div class="buttemBox">
             <RouterLink to="/SignUp"><button class="pageButtem">註冊</button></RouterLink>
-            <input type="submit" value="登入" class="loginButtem">
+            <input type="submit" value="登入" class="loginButtem" @click="handleLogin()">
         </div>
         <div class="ThirdParty">
             <div class="ThirdPartyTitle">
