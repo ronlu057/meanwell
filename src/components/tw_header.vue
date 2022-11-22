@@ -46,7 +46,7 @@
         <div class="header_meunbar">
             <div class="logo_box"><RouterLink to="/"><img src="../img/Logos.svg" alt=""></RouterLink></div>
             <div class="system_bar">
-                <div class="signoutView ">
+                <div class="signoutView active">
                     <div class="sdgMenuItem">
                         <div class="menu_item_text">進入管理系統</div>
                     </div>
@@ -54,7 +54,7 @@
                         <div class="loging_item"><RouterLink to="/login">登入</RouterLink> / <RouterLink to="/SignUp">註冊</RouterLink></div>
                     </div>
                 </div>
-                <div class="signinView active">
+                <div class="signinView ">
                     <RouterLink to="/MemberCentre"><div class="sdgMenuItem">
                         <div class="signinicon"><img src="../img/member_icon.svg" alt=""></div>
                         <div class="signinmenutext">會員中心</div>

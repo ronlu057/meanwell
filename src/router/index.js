@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue'
+import index from '../components/tw_index.vue'
 import TwLogin from '../views/LoginView.vue'
 import ForgotPassword from '../views/ForgotPasswordView.vue'
 import SignUp from '../views/SignUpView.vue'
@@ -29,14 +29,16 @@ import MissionVision from '../views/MissionVision.vue';
 import MembershipTermsofService from '../views/MembershipTermsofService.vue'
 import Calendar from '../views/Calendar.vue'
 import CommonProblem from '../views/CommonProblem.vue'
+import Questionnaire from '../views/Questionnaire.vue'
 
 const router = createRouter({
+  base: './',
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'index',
-      component: () => import('../components/tw_index.vue')
+      component: index
     },
     {
       path: '/about',
@@ -214,6 +216,12 @@ const router = createRouter({
       path: '/CommonProblem',
       name: 'CommonProblem',
       component: CommonProblem
+    }
+    ,
+    {
+      path: '/Questionnaire',
+      name: 'Questionnaire',
+      component: Questionnaire
     }
   ]
 })

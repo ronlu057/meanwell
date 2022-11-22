@@ -20,12 +20,16 @@
                 </div>
                 <div class="Boxbarbuttem2">
                     <RouterLink to="/"><button class="pageButtem">確認送出</button></RouterLink>
+                    {{ store.userccs }}
                 </div>
             </section>
         </div>
     </main>
 </div>
 </template>
-<script>
+<script setup>
+import {ref ,onMounted} from 'vue';
+import {useSignup} from '../stores/counter.js';
 
+const store = useSignup();
 </script>

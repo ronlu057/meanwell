@@ -1,20 +1,6 @@
 
 <script setup>
-    
-    import {ref ,onMounted} from 'vue';
-    const data = ref([]);
-    onMounted((res) =>{
-        axios.post('https://demo18.e-giant.com.tw/API_App/HomePage/NewsList',qs.stringify({
-            'u_id': 'string',
-            'AuthCode': 'string',
-            'Lang': 'string'
-        }))
-            .then((res)=>{
-                data.value = res.data;
-                console.log( data.value )
-            })
-            
-    })
+
 </script>
 <template>
     <div class="page_main">

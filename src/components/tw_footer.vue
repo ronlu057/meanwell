@@ -27,6 +27,7 @@
                     <ul>
                         <li><router-link to="/MembershipTermsofService">會員服務條款</router-link></li>
                         <li><router-link to="/CommonProblem">常見問題</router-link></li>
+                        <li><router-link to="/Questionnaire">問卷調查</router-link></li>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,1 @@
+import{_ as e,a as t,c,b as o}from"./index.5ef125d1.js";const s={},n=o("div",{class:"page_content"}," 123456 ",-1),a=[n];function _(r,i){return t(),c("main",null,a)}const l=e(s,[["render",_]]);export{l as default};
