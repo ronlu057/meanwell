@@ -1,35 +1,14 @@
 <script setup>
-    import {ref ,onMounted} from 'vue';
-    import { userLogin } from '../api.js';
-    const UserID = ref('');
-    const UserPAW = ref('');
-    const handleLogin = () => {
-        let userEmail = UserID.value;
-        let password = UserPAW.value;
-        if ( userEmail !== '' && password !== '' ) {
-            userLogin ({ 
-                "u_id": UserID.value,
-                "RA": UserPAW.value,
-                "mpDeviceID": "string",
-                "mpFCMID": "string",
-                "os": "string",
-                "mpPhoneType": "string",
-                "mpPhoneSize": "string",
-                "Vers": "string",
-                "AppVers": "string",
-                "Lang": "string"
-            })
-            .then(res => {
-                console.log(res.data);
-            })
-            .catch(err => {
-                console.log(err);
-            });
-        } else {
-            alert('請輸入您的帳號密碼')
-        }
-    };
-
+    import {ref ,onMounted} from 'vue';  
+    import {useLogin} from '../stores/counter.js';
+    const useremail = ref('');
+    const userkeypassword = ref('');
+    
+    const store = useLogin()
+    
+    const loginent = () => {
+        store.logintodo(useremail.value,userkeypassword.value);loginmag
+    }
 </script>
 <template>
 <div class="page_main">
@@ -41,10 +20,10 @@
       <section class="loginContentBox">
         <div class="ContentBoxTitle">會員登入 / 註冊</div>
         <div class="User_account">
-            <input type="email" class="User_accountInput" placeholder="請輸入電子信箱" required v-model="UserID" >
+            <input type="email" class="User_accountInput" placeholder="請輸入電子信箱" required v-model="useremail" >
         </div>
         <div class="User_password">
-            <input type="password" class="User_accountInput" placeholder="請輸入密碼" required v-model="UserPAW">
+            <input type="password" class="User_accountInput" placeholder="請輸入密碼" required v-model="userkeypassword">
         </div>
         <div class="login_confirm_input">
             <label>
@@ -55,7 +34,8 @@
         </div>
         <div class="buttemBox">
             <RouterLink to="/SignUp"><button class="pageButtem">註冊</button></RouterLink>
-            <input type="submit" value="登入" class="loginButtem" @click="handleLogin()">
+            <input type="submit" value="登入" class="loginButtem" @click="loginent">
+            {{ store.loginmag }}
         </div>
         <div class="ThirdParty">
             <div class="ThirdPartyTitle">
