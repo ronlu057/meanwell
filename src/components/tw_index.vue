@@ -1,5 +1,27 @@
 
 <script setup>
+import {ref ,onMounted} from 'vue';  
+import {useLogin} from '../stores/counter.js';
+import router from '../router/index.js';
+const store = useLogin()
+
+onMounted(()=>{
+    if ($cookies.isKey("u_id") == true && $cookies.isKey("AuthCode") == true) {
+        store.actInLogOut = false;
+        store.actInLogin = true;
+    } else {
+        store.actInLogOut = true;
+        store.actInLogin = false;
+    }
+});
+
+const ActivityLink = () => {
+    if ( $cookies.isKey("u_id") == true && $cookies.isKey("AuthCode") == true) {
+        router.push({name: 'Course_Overview'})
+    } else {
+        router.push({name: 'login'})
+    }
+};
 
 </script>
 <template>
@@ -10,26 +32,26 @@
             <section class="indexActivityBar">
                 <div class="indAct_item_Box">
                     <ul>
-                        <router-link to="/Course/Course_Overview"><li>
+                        <a href="javascript:;" @click="ActivityLink"><li>
                             <div class="atcImgBox"><img src="../img/activity_1.svg" alt=""></div>
                             <div class="atcText Conference">會議活動</div>
-                        </li></router-link>
-                        <router-link to="/Course/Course_Overview"><li>
+                        </li></a>
+                        <a href="javascript:;" @click="ActivityLink"><li>
                             <div class="atcImgBox"><img src="../img/activity_2.svg" alt=""></div>
                             <div class="atcText EducationTraining">教育訓練</div>
-                        </li></router-link>
-                        <router-link to="/Course/Course_Overview"><li>
+                        </li></a>
+                        <a href="javascript:;" @click="ActivityLink"><li>
                             <div class="atcImgBox"><img src="../img/activity_3.svg" alt=""></div>
                             <div class="atcText TourGuide">活動導覽</div>
-                        </li></router-link>
-                        <router-link to="/Course/Course_Overview"><li>
+                        </li></a>
+                        <a href="javascript:;" @click="ActivityLink"><li>
                             <div class="atcImgBox"><img src="../img/activity_4.svg" alt=""></div>
                             <div class="atcText CaringCare">關懷照護</div>
-                        </li></router-link>
-                        <router-link to="/Course/Course_Overview"><li>
+                        </li></a>
+                        <a href="javascript:;" @click="ActivityLink"><li>
                             <div class="atcImgBox"><img src="../img/activity_5.svg" alt=""></div>
                             <div class="atcText GiftingPlatform">禮贈平台</div>
-                        </li></router-link>
+                        </li></a>
                     </ul>
                 </div>
             </section>
@@ -42,7 +64,10 @@
                                 <div class="AnnTopText">訊息通知</div>
                             </div>
                             <div class="AnnContent">
-                                <ul>
+                                <ul v-show="store.actInLogOut">
+                                    <li class="ConferenceLine"><a href="">請先登入會員</a></li>
+                                </ul>
+                                <ul v-show="store.actInLogin">
                                     <li class="ConferenceLine"><a href="">6/20(一)10：00 7A 服務會議</a></li>
                                     <li class="EducationTrainingLine"><a href="">6/24(五)14：00 8F SDG學員講座</a></li>
                                     <li class="GiftingPlatformLine"><a href="">訂單000000 商品預計於7/1出貨</a></li>

@@ -3,7 +3,7 @@
         <div class="mobile_menus">
             <div class="cles_icon" @click="colsMobileMenu()"><img src="../img/closure_icon.svg" alt=""></div>
             <div class="logo_box" @click="colsMobileMenu()"><RouterLink to="/"><img src="../img/Logos.svg" alt=""></RouterLink></div>
-            <div class="mobile_signoutView active">
+            <div class="mobile_signoutView">
                 <div class="mobile_sdgMenuItem">
                     <div class="menu_item_text">進入管理系統</div>
                 </div>
@@ -11,7 +11,7 @@
                     <div class="loging_item"><RouterLink to="/login" @click="colsMobileMenu()">登入</RouterLink> / <RouterLink to="/SignUp" @click="colsMobileMenu()">註冊</RouterLink></div>
                 </div>
             </div>
-            <div class="mobile_signinView ">
+            <div class="mobile_signinView">
                 <RouterLink to="/MemberCentre" @click="colsMobileMenu()"><div class="mobile_sdgMenuItem">
                     <div class="signinicon"><img src="../img/member_icon.svg" alt=""></div>
                     <div class="signinmenutext">會員中心</div>
@@ -46,7 +46,7 @@
         <div class="header_meunbar">
             <div class="logo_box"><RouterLink to="/"><img src="../img/Logos.svg" alt=""></RouterLink></div>
             <div class="system_bar">
-                <div class="signoutView active">
+                <div class="signoutView" :class="{active: store.att}">
                     <div class="sdgMenuItem">
                         <div class="menu_item_text">進入管理系統</div>
                     </div>
@@ -54,12 +54,12 @@
                         <div class="loging_item"><RouterLink to="/login">登入</RouterLink> / <RouterLink to="/SignUp">註冊</RouterLink></div>
                     </div>
                 </div>
-                <div class="signinView ">
+                <div class="signinView " :class="{active: store.att2}">
                     <RouterLink to="/MemberCentre"><div class="sdgMenuItem">
                         <div class="signinicon"><img src="../img/member_icon.svg" alt=""></div>
                         <div class="signinmenutext">會員中心</div>
                     </div></RouterLink>
-                    <div class="Tosignout">登出</div>
+                    <a href="" @click="logout"><div class="Tosignout">登出</div></a>
                     <RouterLink to="/Calendar"><div class="sdgMenuItem2">
                         <div class="signinicon"><img src="../img/calendar_icon.svg" alt=""></div>
                         <div class="signinmenutext">行事曆</div>
@@ -81,8 +81,11 @@
     </header>
 </template>
 <script setup>
-import { ref } from "vue"
+import { onMounted, ref } from "vue"
+import router from '../router/index.js';
+import { useLogin } from '../stores/counter.js';
 const mobileMenu = ref(false);
+const store = useLogin()
 const mobileactiveIddx = ref(null);
 const mobileactiveIdx = ref(null);
 const NavItemArr = ref([
@@ -142,6 +145,26 @@ const handleMenuFn = (idx) => {
 const handleMenuFna = (iddx) => {
         mobileactiveIddx.value = iddx;
         mobileMenu.value = false;
-    };
+};
+console.log( store.att )
+console.log( store.att2 )
+
+onMounted(() => {
+    if ($cookies.isKey("u_id") == true) {
+        store.att = true
+        store.att2 = false
+    } else {
+        store.att = false
+        store.att2 = true
+    }
+});
+const logout = () => {
+    $cookies.remove("u_id")
+    $cookies.remove("AuthCode")
+    $cookies.remove("Lang")
+    router.push({name: 'index'})
+}
+
+
     
 </script>

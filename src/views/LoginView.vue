@@ -3,11 +3,9 @@
     import {useLogin} from '../stores/counter.js';
     const useremail = ref('');
     const userkeypassword = ref('');
-    
     const store = useLogin()
-    
     const loginent = () => {
-        store.logintodo(useremail.value,userkeypassword.value);loginmag
+        store.logintodo();
     }
 </script>
 <template>
@@ -35,7 +33,7 @@
         <div class="buttemBox">
             <RouterLink to="/SignUp"><button class="pageButtem">註冊</button></RouterLink>
             <input type="submit" value="登入" class="loginButtem" @click="loginent">
-            {{ store.loginmag }}
+            
         </div>
         <div class="ThirdParty">
             <div class="ThirdPartyTitle">

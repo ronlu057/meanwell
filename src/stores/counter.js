@@ -69,6 +69,10 @@ export const useSignup = defineStore("signup", () => {
 
 export const useLogin = defineStore("Login", () => {
     const logindata = ref([{}]);
+    const att = ref(true);
+    const att2 = ref(false);
+    const actInLogin = ref(false);
+    const actInLogOut = ref(true);
     const loginmag = ref({
         u_id: "",
         RA: "",
@@ -81,21 +85,29 @@ export const useLogin = defineStore("Login", () => {
         AppVers: "string",
         Lang: "tw"
     });
-    const logintodo = async(useremail,userkeypassword) =>{
-        loginmag.value.u_id = useremail;
-        loginmag.value.RA = userkeypassword;
-        try {
-            const res = await axios.post(
-                'https://demo18.e-giant.com.tw/API_App/MemberData/Login', loginmag.value
-            )
-            logindata.value = res.data
-        } catch (error) {
-
-        }
+    const logintodo = () =>{
+            try{
+            $cookies.config("1m"),
+            $cookies.set( "u_id", "ronlu057@gmail.com" )
+            $cookies.set( "AuthCode", "5459952541" )
+            $cookies.set( "Lang", "tw" )
+            } catch (error) {}
+            if ( $cookies.isKey("AuthCode") == true ){
+                att.value = true
+                att2.value = false
+                router.push({name: 'MemberCentre'})
+            } else {
+                att.value = false
+                att2.value = true
+            }
     };
     return {
         logintodo,
         loginmag,
-        logindata
+        logindata,
+        att,
+        att2,
+        actInLogin,
+        actInLogOut,
     }
 });

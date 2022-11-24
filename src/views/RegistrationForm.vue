@@ -1,7 +1,19 @@
+<script setup>
+    import { ref, onMounted } from "vue"
+    import formDatas from '../stores/datasheet.json'
+    
+    const fromdata = ref(formDatas)
+    onMounted(()=>{
+        fromdata.value
+        console.log( fromdata )
+    })
+
+</script>
 <template>
 <div class="page_main">
     <main>
         <div class="page_content avt">
+            
             <div class="PageBreadCrumbs">
                 <ul>
                     <li>首頁</li>
@@ -14,8 +26,8 @@
                 </ul>
             </div>
             <div class="CourseContentBox">
-                <div class="CourseinfTitle">蘇州智慧園區開幕儀式</div>
-                <div class="activitiesSubtitle">報名資料</div>
+                <div class="CourseinfTitle">{{ fromdata.eventRegistration.eventtitle }}</div>
+                <div class="activitiesSubtitle">{{ fromdata.eventRegistration.RegistrationInformation }}</div>
                 <div class="itemTitle">
                     <div class="itemTitleLine"></div>
                     <div class="itemTitletext">參與身分</div>
@@ -82,70 +94,3 @@
     </main>
 </div>
 </template>
-<script setup>
-    import { ref } from "vue"
-    const activeIdx = ref(2);
-    const activeIddx = ref(0);
-    const activityset = ref(0);
-    const NavItemArr = ref([
-        {
-            name: 'SDG帳戶',
-            path: '/MemberCentre',
-        },{
-            name: '帳號管理',
-            path: '',
-            item:[
-                {
-                    name: '個人資料',
-                    path: '/PersonalInformation',
-                },{
-                    name: '登入設定',
-                    path: '/LoginSettings',
-                },{
-                    name: '變更密碼',
-                    path: '/ChangePassword',  
-                },{
-                    name: '會員管理辦法',
-                    path: '/MembershipManagementMeasures',  
-                }
-            ]
-        },{
-            name: '我的活動',
-            path: '', 
-            item:[
-                {
-                    name: '進行中',
-                    path: '/ActivityListOngoing',
-                },{
-                    name: '已結束',
-                    path: '/ActivityListOver',  
-                },{
-                    name: '已取消',
-                    path: '/ActivityListCancelled',  
-                }
-            ] 
-        },{
-            name: '領取分票',
-            path: '/VotesTaken',  
-        }
-    ]);
-    const Activitystate = ref([
-        { state: '進行中',path: '/ActivityListOngoing' },{ state: '已結束',path: '/ActivityListOver' },{ state: '已取消',path: '/ActivityListCancelled' }
-    ]);
-    const handleMenuFn = (idx) => {
-      activeIdx.value = idx;
-    };
-    const handleMenuFna = (iddx) => {
-        activeIddx.value = iddx;
-    };
-    const handleMenuFnb = () => {
-        activeIddx.value = 0;
-        if( activeIdx.value == 2 ){
-            activeIddx.value = null;
-        }
-    };
-    const stateset = (idw) => {
-        activityset.value = idw;
-        console.log(activityset.value)
-    };
-</script>
