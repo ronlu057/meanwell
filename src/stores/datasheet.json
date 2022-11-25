@@ -1,7 +1,54 @@
 {
-    "eventRegistration":
+    "eventR":
         { 
             "eventtitle" : "蘇州智慧園區開幕儀式",
-            "RegistrationInformation" : "報名資料"
+            "RegistrationInformation" : "報名資料",
+            "participatingStatus" : "參與身分",
+            "position": [
+                {
+                    "position" : "position",
+                    "values": "0",
+                    "name": "Staff",
+                    "thisname": "員工"
+                },
+                {
+                    "position" : "position",
+                    "values": "1",
+                    "name": "foreignGuests",
+                    "thisname": "外賓"
+                }
+            ],
+            "ParticipationMethod" : "與會方式",
+            "RFMethods": [
+                {
+                    "position" : "RFMethod",
+                    "values": "0",
+                    "name": "person",
+                    "thisname": "親臨"
+                },
+                {
+                    "position" : "RFMethod",
+                    "values": "1",
+                    "name": "network",
+                    "thisname": "線上zoom meeting"
+                }
+            ],
+            "CMname" : "姓名",
+            "PlCMname" : "請輸入姓名",
+            "gender" : "性別",
+            "sex" : [
+                {
+                    "position" : "sex01",
+                    "values": "0",
+                    "name": "male",
+                    "thisname": "男"
+                },
+                {
+                    "position" : "sex01",
+                    "values": "1",
+                    "name": "Female",
+                    "thisname": "女"
+                }
+            ]
         }
 }
