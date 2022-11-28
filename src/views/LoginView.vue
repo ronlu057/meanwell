@@ -1,13 +1,3 @@
-<script setup>
-    import {ref ,onMounted} from 'vue';  
-    import {useLogin} from '../stores/counter.js';
-    const useremail = ref('');
-    const userkeypassword = ref('');
-    const store = useLogin()
-    const loginent = () => {
-        store.logintodo();
-    }
-</script>
 <template>
 <div class="page_main">
     <main>
@@ -65,4 +55,13 @@
   </main>
   </div>
 </template>
-
+<script setup>
+    import {ref ,onMounted} from 'vue';  
+    import {useLogin} from '../stores/counter.js';
+    const useremail = ref('');
+    const userkeypassword = ref('');
+    const store = useLogin()
+    const loginent = () => {
+        store.logintodo();
+    }
+</script>

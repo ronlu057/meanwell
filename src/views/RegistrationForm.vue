@@ -1,30 +1,7 @@
-<script setup>
-    import { ref, onMounted } from "vue"
-    import formDatas from '../stores/datasheet.json'
-    
-    const fromdata = ref(formDatas)
-    const entername = ref('')
-    const chooseide = ref(0)
-    const chooseMet = ref(0)
-    const chooseGen = ref(0)
-
-    const chooseidentity = (checkedide) => {
-        chooseide.value =  checkedide
-        console.log( chooseide.value )
-    }
-    const chooseMethod = (checkedMet) => {
-        chooseMet.value =  checkedMet
-        console.log( chooseMet.value )
-    }
-    const choosegender = (checkedGen) => {
-        chooseGen.value = checkedGen
-    }
-</script>
 <template>
 <div class="page_main">
     <main>
         <div class="page_content avt">
-            
             <div class="PageBreadCrumbs">
                 <ul>
                     <li>首頁</li>
@@ -64,7 +41,7 @@
                     <div class="itemTitletext">{{fromdata.eventR.CMname}}</div>
                 </div>
                 <div class="memberinfTextinput">
-                    <input type="text" name="" id="" class="memberinfinput" :placeholder="fromdata.eventR.PlCMname" v-model="entername">
+                    <input type="text" name="" id="" class="memberinfinput" v-model="store.EventRFintor.u_id" >
                 </div>
                 <div class="itemTitle">
                     <div class="itemTitleLine"></div>
@@ -78,30 +55,78 @@
                 </div>
                 <div class="itemTitle">
                     <div class="itemTitleLine"></div>
-                    <div class="itemTitletext">手機號碼</div>
+                    <div class="itemTitletext">{{fromdata.eventR.cellphonenumber}}</div>
                 </div>
                 <div class="memberinfTextinput">
-                    <input type="text" name="" id="" class="memberinfinput" placeholder="請輸入手機號碼">
+                    <input type="text" name="" id="" class="memberinfinput" :placeholder="fromdata.eventR.cellphoneinput" v-model="cellphone">
                 </div>
                 <div class="itemTitle">
                     <div class="itemTitleLine"></div>
-                    <div class="itemTitletext">任職公司</div>
+                    <div class="itemTitletext">{{fromdata.eventR.EmployedCompany}}</div>
                 </div>
                 <div class="memberinfTextinput">
-                    <input type="text" name="" id="" class="memberinfinput" placeholder="請輸入任職公司">
+                    <input type="text" name="" id="" class="memberinfinput" :placeholder="fromdata.eventR.EmpCompInput" v-model="companyname">
                 </div>
                 <div class="itemTitle">
                     <div class="itemTitleLine"></div>
-                    <div class="itemTitletext">職稱</div>
+                    <div class="itemTitletext">{{fromdata.eventR.JobTitle}}</div>
                 </div>
                 <div class="memberinfTextinput">
-                    <input type="text" name="" id="" class="memberinfinput" placeholder="請輸入職稱">
+                    <input type="text" name="" id="" class="memberinfinput" :placeholder="fromdata.eventR.JobTitleInput" v-model="JTname">
                 </div>
                 <div class="Boxbarbuttem">
-                    <router-link to="/Course/RegistrationFormNext"><button class="pageButtem">下一步</button></router-link>
+                    <button class="pageButtem" @click="NextStep">{{ fromdata.eventR.NextStep }}</button>
                 </div>
             </div>
         </div>
     </main>
 </div>
 </template>
+<script setup>
+    import { ref, onMounted } from "vue"
+    import formDatas from '../stores/datasheet.json'
+    import { useLogin } from '../stores/counter.js';
+    const store = useLogin();
+    const fromdata = ref(formDatas)
+    const usid = ref($cookies.get("u_id"))
+    const actid = ref($cookies.get("AuthCode"))
+    const Lang = ref($cookies.get("Lang"))
+    const entername = ref("")
+    const chooseide = ref(0)
+    const chooseMet = ref(0)
+    const chooseGen = ref(0)
+    const cellphone = ref('')
+    const companyname = ref('')
+    const JTname = ref('')
+
+    
+
+    const memberdata = store.mamberdata
+
+    const chooseidentity = (checkedide) => {
+        chooseide.value =  checkedide
+    }
+    const chooseMethod = (checkedMet) => {
+        chooseMet.value =  checkedMet
+    }
+    const choosegender = (checkedGen) => {
+        chooseGen.value = checkedGen
+    }
+    console.log( store.EventRFintor )
+    console.log( store.mamberdata )
+    const NextStep = () => {
+        store.EventRFintor.u_id = usid.value ;
+        store.EventRFintor.ActId = actid.value ;
+        store.EventRFintor.Lang = Lang.value ;
+        store.EventRFintor.Identity = chooseide.value;
+        store.EventRFintor.JoinWay = chooseMet.value;
+        store.EventRFintor.Name = entername.value;
+        store.EventRFintor.Sex = chooseGen.value;
+        store.EventRFintor.Mobile = cellphone.value;
+        store.EventRFintor.Email = usid.value ;
+        store.EventRFintor.CompanyName = companyname.value;
+        store.EventRFintor.JobTitle = JTname.value;
+        store.nextsp();
+    }
+    
+</script>

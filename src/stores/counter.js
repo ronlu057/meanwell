@@ -3,6 +3,7 @@ import { ref,computed } from "vue";
 import axios from 'axios';
 import router from '../router/index.js';
 
+// ----------------註冊使用Stores----------------
 export const useSignup = defineStore("signup", () => {
     const cardList = ref([{}]);
     const cardcode = ref([{}]);
@@ -44,7 +45,6 @@ export const useSignup = defineStore("signup", () => {
             }
         } catch (error) {}
     };
-
     const passwordpet = async(StPw) => {
         userpassword.value.Password = StPw;
         try {
@@ -67,12 +67,14 @@ export const useSignup = defineStore("signup", () => {
     };
 });
 
+// ----------------登入使用Stores----------------
 export const useLogin = defineStore("Login", () => {
     const logindata = ref([{}]);
     const att = ref(true);
     const att2 = ref(false);
     const actInLogin = ref(false);
     const actInLogOut = ref(true);
+    const mamberdata = ref([{}]);
     const loginmag = ref({
         u_id: "",
         RA: "",
@@ -85,12 +87,15 @@ export const useLogin = defineStore("Login", () => {
         AppVers: "string",
         Lang: "tw"
     });
-    const logintodo = () =>{
+    const logintodo = async(ref) =>{
             try{
             $cookies.config("1m"),
             $cookies.set( "u_id", "ronlu057@gmail.com" )
             $cookies.set( "AuthCode", "5459952541" )
             $cookies.set( "Lang", "tw" )
+                const res = await axios.post('https://demo18.e-giant.com.tw/API_App/MemberData/GetData' , { "u_id": "ronlu057@gmail.com","AuthCode": "5459952541","Lang": "tw" })
+                mamberdata.value = res.data
+                console.log (mamberdata.value)
             } catch (error) {}
             if ( $cookies.isKey("AuthCode") == true ){
                 att.value = true
@@ -101,7 +106,38 @@ export const useLogin = defineStore("Login", () => {
                 att2.value = true
             }
     };
+    const EventRFintor =ref({
+        u_id: "string",
+        AuthCode: "string",
+        Lang: "string",
+        ActId: "string",
+        SeId: 0,
+        Identity: 0,
+        JoinWay: 0,
+        Name: "string",
+        Sex: 0,
+        Mobile: "string",
+        Email: "string",
+        CompanyName: "string",
+        JobTitle: "string",
+        DocType: 0,
+        DocNumber: "string",
+        Meals: 0,
+        Traffic: 0,
+        CarNumber: "string",
+        SignUpMemo: "string",
+        Ticket_E_Apply: 0,
+        Ticket_P_Apply: 0,
+        Address: "string"
+    });
+
+    const nextsp = () => {
+        router.push({name: 'RegistrationFormNext'})
+    }
+
     return {
+        EventRFintor,
+        nextsp,
         logintodo,
         loginmag,
         logindata,
@@ -110,4 +146,4 @@ export const useLogin = defineStore("Login", () => {
         actInLogin,
         actInLogOut,
     }
-});
+})
