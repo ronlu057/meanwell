@@ -1,9 +1,15 @@
 
 <script setup>
 import {ref ,onMounted} from 'vue';  
+import axios from 'axios';
 import {useLogin} from '../stores/counter.js';
 import router from '../router/index.js';
 const store = useLogin()
+const usid = ref($cookies.get("u_id"))
+const actid = ref($cookies.get("AuthCode"))
+const Lang = ref($cookies.get("Lang"))
+const ACEs = ref([{}]);
+
 
 onMounted(()=>{
     if ($cookies.isKey("u_id") == true && $cookies.isKey("AuthCode") == true) {
@@ -13,6 +19,11 @@ onMounted(()=>{
         store.actInLogOut = true;
         store.actInLogin = false;
     }
+    axios.post('https://demo18.e-giant.com.tw/API_App/HomePage/ActivityList',{ "u_id": usid.value,"AuthCode": actid.value,"Lang": Lang.value,  "ModClass": 1,"SDateTime": '', "EDateTime": '',"Keywords": '' })
+    .then ((res) => {
+        ACEs.value = res.data
+        console.log( ACEs.value  )
+    });
 });
 
 const ActivityLink = () => {

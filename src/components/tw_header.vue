@@ -70,9 +70,9 @@
                     <div class="language_item">
                         <img src="../img/language_icon.svg" alt="">
                         <div class="language_bar">
-                            <a href="javascript:;"><div class="language_bar_item">繁中</div></a>
-                            <a href="javascript:;"><div class="language_bar_item">简中</div></a>
-                            <a href="javascript:;"><div class="language_bar_item">English</div></a>
+                            <a href="javascript:;" ><div class="language_bar_item" @click="$i18n.locale='tw'">繁中</div></a>
+                            <a href="javascript:;" ><div class="language_bar_item" @click="$i18n.locale='cn'">简中</div></a>
+                            <a href="javascript:;" ><div class="language_bar_item" @click="$i18n.locale='en'">English</div></a>
                         </div>
                     </div>
                 </div>

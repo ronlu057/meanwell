@@ -2,7 +2,6 @@ import { defineStore } from "pinia";
 import { ref,computed } from "vue";
 import axios from 'axios';
 import router from '../router/index.js';
-
 // ----------------註冊使用Stores----------------
 export const useSignup = defineStore("signup", () => {
     const cardList = ref([{}]);
@@ -106,6 +105,7 @@ export const useLogin = defineStore("Login", () => {
                 att2.value = true
             }
     };
+
     const EventRFintor =ref({
         u_id: "string",
         AuthCode: "string",
@@ -137,6 +137,7 @@ export const useLogin = defineStore("Login", () => {
 
     return {
         EventRFintor,
+        mamberdata,
         nextsp,
         logintodo,
         loginmag,

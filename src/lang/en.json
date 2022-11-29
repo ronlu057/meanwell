@@ -1,0 +1,60 @@
+{
+    "eventR": {
+        "eventtitle": "Opening Ceremony of Suzhou Smart Park",
+        "RegistrationInformation": "Registration information",
+        "participatingStatus": "Participating Status",
+        "position": [
+            {
+                "position": "position",
+                "values": "0",
+                "name": "Staff",
+                "thisname": "外賓"
+            },
+            {
+                "position": "position",
+                "values": "1",
+                "name": "foreignGuests",
+                "thisname": "員工"
+            }
+        ],
+        "ParticipationMethod": "與會方式",
+        "RFMethods": [
+            {
+                "position": "RFMethod",
+                "values": "0",
+                "name": "person",
+                "thisname": "親臨"
+            },
+            {
+                "position": "RFMethod",
+                "values": "1",
+                "name": "network",
+                "thisname": "線上zoom meeting"
+            }
+        ],
+        "CMname": "姓名",
+        "PlCMname": "請輸入姓名",
+        "gender": "性別",
+        "sex": [
+            {
+                "position": "sex01",
+                "values": "0",
+                "name": "male",
+                "thisname": "男"
+            },
+            {
+                "position": "sex01",
+                "values": "1",
+                "name": "Female",
+                "thisname": "女"
+            }
+        ],
+        "cellphonenumber": "手機號碼",
+        "cellphoneinput": "請輸入手機號碼",
+        "EmployedCompany": "任職公司",
+        "EmpCompInput": "請輸入公司名稱",
+        "JobTitle": "職稱",
+        "JobTitleInput": "請輸入職稱",
+        "NextStep": "下一步"
+    }
+}
